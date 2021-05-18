@@ -16,7 +16,7 @@ class HomeAdminController extends Controller
             'name' => 'Home Page',
             'nameOther' => 'Personal Data',
         ];
-        $this->middleware('permission:show-home')->only('index');
+        /* $this->middleware('permission:show-home')->only('index'); */
     }
 
     public function index()
@@ -34,12 +34,12 @@ class HomeAdminController extends Controller
         return view('admin.home.change-password', $this->values); 
     }
 
-    /* public function changePasswordDo(ChangePasswordRequest $request)
+    public function changePasswordDo(ChangePasswordRequest $request)
     {
         $admin = Admin::find(Auth::user()->id);
         $admin->password = Hash::make($request->password);
         $admin->save();
 
         return redirect()->route('admin.home.index')->withErrors(['success' => trans('passwords.reset')]);
-    } */
+    }
 }

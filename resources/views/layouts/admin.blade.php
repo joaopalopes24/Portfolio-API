@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio - Laravel</title>
+  <title>Desafio OM30</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -31,20 +31,19 @@
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
         <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">
-          <img src="{{asset('plugins/images/profile.jpg')}}" class="img-circle elevation-2" style="width:28px; margin-bottom:5px; margin-right:5px;">
-          {{ Auth()->user()->full_name }}
+          <i class="far fa-user"></i>
         </a>
         <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow" style="left: 0px; right: inherit;">
           <li><a href="{{route('admin.home.profile')}}" class="dropdown-item">My Profile</a></li>
           <li><a href="{{route('admin.home.change_password')}}" class="dropdown-item">Change Password</a></li>
           <li class="dropdown-divider"></li>
           <li>
-            <a class="dropdown-item" href="{{ route('admin.logout') }}"
+            <a class="dropdown-item" href="{{ route('logout') }}"
               onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">
               <i class="mr-2 fa fa-sign-out-alt"></i>Logout
             </a>
-            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="d-none">
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
               @csrf
             </form>
           </li>
@@ -56,7 +55,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <a href="#" class="brand-link text-center">
       <img src="{{asset('plugins/images/logo-2.png')}}" alt="#" class="brand-image" style="margin-left: .5rem; margin-right: 0rem;">
-      <span class="brand-text font-weight-light">Portfolio - Laravel</span>
+      <span class="brand-text font-weight-light">Desafio OM30</span>
     </a>
     <div class="sidebar">
       <nav class="mt-2">
@@ -106,7 +105,7 @@
 
   <footer class="main-footer">
     <strong>Copyright &copy; {{ date('Y') }} - 
-    <a href="https://gitlab.com/joaopalopes24/ordering-and-delivery-system" target="_blank">
+    <a href="https://gitlab.com/joaopalopes24/challenge-om30" target="_blank">
       João Pedro Lopes.
     </a></strong> 
     All rights reserved.

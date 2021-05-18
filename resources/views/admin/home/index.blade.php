@@ -5,7 +5,7 @@
 @section('content')
 <!-- Home Content -->
 <div class="row">
-  {{ $company_name }}
+  teste
 </div>
 <!-- End Content -->
 @endsection
