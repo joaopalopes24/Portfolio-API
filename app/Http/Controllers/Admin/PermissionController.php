@@ -37,7 +37,7 @@ class PermissionController extends Controller
     {
         $values = $request->validated();
         $values['name'] = Str::slug($values['full_name']);
-        $values['guard_name'] = 'admin';
+        $values['guard_name'] = 'web';
 
         Permission::create($values);
 
