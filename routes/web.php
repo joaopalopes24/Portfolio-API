@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminHasPermissionController;
 use App\Http\Controllers\Admin\HomeAdminController;
+use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\RoleHasPermissionController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -32,8 +34,18 @@ Route::middleware('auth')->name('admin.')->group(function () {
         Route::post('change-password', [HomeAdminController::class, 'changePasswordDo'])->name('change_password_do');
     });
 
+    Route::resource('log', LogController::class)->only(['index','show']);
+
+    /* Route::resource('client', ClientController::class); */
+
     Route::resource('admin', AdminController::class);
 
     Route::resource('admin.permission', AdminHasPermissionController::class)->only(['index','store']);
+
+    Route::resource('role', RoleController::class);
+
+    Route::resource('role.permission', RoleHasPermissionController::class)->only(['index','store']);
+
+    Route::resource('permission', PermissionController::class);
 });
 /* ---------- FIM - ADMINISTRADOR ---------- */
