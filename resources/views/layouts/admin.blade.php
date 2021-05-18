@@ -62,7 +62,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <x-menu permission="show-home" route="admin.home.index" active="admin.home.index" icon="fas fa-chart-bar" name="Home Page"/>
           <x-menu permission="show-system-logs" route="admin.log.index" active="admin.log." icon="fas fa-sync" name="Logs"/>
-          <x-menu permission="show-patients" route="admin.home.index" active="admin.patient." icon="fas fa-users" name="Patients"/>
+          <x-menu permission="show-patients" route="admin.home.index" active="admin.patient." icon="fas fa-hospital-user" name="Patients"/>
           <x-menu permission="show-administrators" route="admin.admin.index" active="admin.admin." icon="fas fa-user-shield" name="Administrators"/>
           <x-menu permission="show-roles" route="admin.role.index" active="admin.role." icon="far fa-newspaper" name="Roles"/>
           <x-menu permission="show-permissions" route="admin.permission.index" active="admin.permission." icon="fas fa-paperclip" name="Permissions"/>
