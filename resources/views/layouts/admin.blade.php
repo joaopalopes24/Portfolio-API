@@ -54,15 +54,15 @@
 
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <a href="#" class="brand-link text-center">
-      <img src="{{asset('plugins/images/logo-2.png')}}" alt="#" class="brand-image" style="margin-left: .5rem; margin-right: 0rem;">
-      <span class="brand-text font-weight-light">Desafio OM30</span>
+      <img src="{{asset('plugins/images/logo-2.png')}}" alt="#" class="brand-image" style="width: 60px;">
+      <span class="brand-text font-weight-light"><strong>Challenge FullStack</strong></span>
     </a>
     <div class="sidebar">
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <x-menu permission="show-home" route="admin.home.index" active="admin.home.index" icon="fas fa-chart-bar" name="Home Page"/>
-          <x-menu permission="show-system-logs" route="admin.home.index" active="admin.log." icon="fas fa-sync" name="Logs"/>
-          <x-menu permission="show-clients" route="admin.home.index" active="admin.client." icon="fas fa-users" name="Clients"/>
+          <x-menu permission="show-system-logs" route="admin.log.index" active="admin.log." icon="fas fa-sync" name="Logs"/>
+          <x-menu permission="show-patients" route="admin.home.index" active="admin.patient." icon="fas fa-hospital-user" name="Patients"/>
           <x-menu permission="show-administrators" route="admin.admin.index" active="admin.admin." icon="fas fa-user-shield" name="Administrators"/>
           <x-menu permission="show-roles" route="admin.role.index" active="admin.role." icon="far fa-newspaper" name="Roles"/>
           <x-menu permission="show-permissions" route="admin.permission.index" active="admin.permission." icon="fas fa-paperclip" name="Permissions"/>

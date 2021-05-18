@@ -44,32 +44,32 @@ class SpatieSeeder extends Seeder
             'guard_name' => 'web',
         ]);
 
-        /* Clients */
+        /* Patients */
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Show Clients'),
-            'full_name'   => 'Show Clients',
-            'description' => 'Show all system clients (name, CPF, email and birthday).',
+            'name'        => Str::slug('Show Patients'),
+            'full_name'   => 'Show Patients',
+            'description' => 'Show all system patients (photo, name, mother_name, birthday, CPF, CNS and adress).',
             'guard_name' => 'web',
         ]);
 
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Create Clients'),
-            'full_name'   => 'Create Clients',
-            'description' => 'Create system clients (name, CPF, email and birthday).',
+            'name'        => Str::slug('Create Patients'),
+            'full_name'   => 'Create Patients',
+            'description' => 'Create system patients (photo, name, mother_name, birthday, CPF, CNS and adress).',
             'guard_name' => 'web',
         ]);
 
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Edit Clients'),
-            'full_name'   => 'Edit Clients',
-            'description' => 'Edit system clients (name, CPF, email and birthday).',
+            'name'        => Str::slug('Edit Patients'),
+            'full_name'   => 'Edit Patients',
+            'description' => 'Edit system patients (photo, name, mother_name, birthday, CPF, CNS and adress).',
             'guard_name' => 'web',
         ]);
 
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Delete Clients'),
-            'full_name'   => 'Delete Clients',
-            'description' => 'Delete system clients (name, CPF, email and birthday).',
+            'name'        => Str::slug('Delete Patients'),
+            'full_name'   => 'Delete Patients',
+            'description' => 'Delete system patients (photo, name, mother_name, birthday, CPF, CNS and adress).',
             'guard_name' => 'web',
         ]);
 
