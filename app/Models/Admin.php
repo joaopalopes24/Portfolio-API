@@ -28,8 +28,8 @@ class Admin extends Authenticatable
         ->useLogName('Administrator');
     }
 
-    /* public function sendPasswordResetNotification($token)
+    public function sendPasswordResetNotification($token)
     {
         $this->notify(new AdminResetPassword($token));
-    } */
+    }
 }

@@ -54,8 +54,8 @@
 
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <a href="#" class="brand-link text-center">
-      <img src="{{asset('plugins/images/logo-2.png')}}" alt="#" class="brand-image" style="margin-left: .5rem; margin-right: 0rem;">
-      <span class="brand-text font-weight-light">Desafio OM30</span>
+      <img src="{{asset('plugins/images/logo-2.png')}}" alt="#" class="brand-image" style="width: 60px;">
+      <span class="brand-text font-weight-light"><strong>Challenge FullStack</strong></span>
     </a>
     <div class="sidebar">
       <nav class="mt-2">
