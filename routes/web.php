@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\HomeAdminController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,11 +14,20 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+/* ---------- ADMINISTRADOR ---------- */
+/* Rotas de Login do Administrador */
+Auth::routes([
+    'register' => false,
+    'confirm' => false,
+    'verification' => false
+]);
+/* Essa rotas serão redirecionadas para a HOME caso ele esteja logado */
+Route::middleware('auth')->name('admin.')->group(function () {
+    Route::name('home.')->group(function () {
+        Route::get('/', [HomeAdminController::class, 'index'])->name('index');
+        Route::get('profile', [HomeAdminController::class, 'profile'])->name('profile');
+        Route::get('change-password', [HomeAdminController::class, 'changePassword'])->name('change_password');
+        Route::post('change-password', [HomeAdminController::class, 'changePasswordDo'])->name('change_password_do');
+    });
 });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+/* ---------- FIM - ADMINISTRADOR ---------- */

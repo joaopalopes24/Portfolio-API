@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class AddEventColumnToActivityLogTable extends Migration
 {
-    public function up()
+    /* public function up()
     {
         Schema::connection(config('activitylog.database_connection'))->table(config('activitylog.table_name'), function (Blueprint $table) {
             $table->string('event')->nullable()->after('subject_type');
@@ -18,5 +18,5 @@ class AddEventColumnToActivityLogTable extends Migration
         Schema::connection(config('activitylog.database_connection'))->table(config('activitylog.table_name'), function (Blueprint $table) {
             $table->dropColumn('event');
         });
-    }
+    } */
 }

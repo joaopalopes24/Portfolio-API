@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio - Laravel</title>
+  <title>Desafio OM30</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -20,7 +20,7 @@
 <body class="hold-transition login-page" {{-- style="background-color: #AF86CD;" --}}>
 <div class="login-box">
   <div class="login-logo mb-3">
-    <a href="{{ route('/') }}"><img src="{{asset('plugins/images/logo.png')}}" width="300"></a>
+    <img src="{{asset('plugins/images/logo.png')}}" width="300">
   </div>
   <div class="card">
     @yield('content')
