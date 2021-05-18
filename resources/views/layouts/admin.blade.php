@@ -64,7 +64,7 @@
           <x-menu permission="show-system-logs" route="admin.home.index" active="admin.log." icon="fas fa-sync" name="Logs"/>
           <x-menu permission="show-clients" route="admin.home.index" active="admin.client." icon="fas fa-users" name="Clients"/>
           <x-menu permission="show-administrators" route="admin.admin.index" active="admin.admin." icon="fas fa-user-shield" name="Administrators"/>
-          <x-menu permission="show-roles" route="admin.home.index" active="admin.role." icon="far fa-newspaper" name="Roles"/>
+          <x-menu permission="show-roles" route="admin.role.index" active="admin.role." icon="far fa-newspaper" name="Roles"/>
           <x-menu permission="show-permissions" route="admin.home.index" active="admin.permission." icon="fas fa-paperclip" name="Permissions"/>
         </ul>
       </nav>

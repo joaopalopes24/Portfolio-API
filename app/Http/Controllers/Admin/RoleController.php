@@ -35,7 +35,7 @@ class RoleController extends Controller
     public function store(RoleRequest $request)
     {
         $values = $request->validated();
-        $values['guard_name'] = 'admin';
+        $values['guard_name'] = 'web';
 
         Role::create($values);
 
