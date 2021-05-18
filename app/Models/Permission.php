@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Spatie\Permission\Models\Permission as Permissions;
 use Spatie\Activitylog\Traits\LogsActivity;
-use Illuminate\Support\Str;
+use Spatie\Activitylog\LogOptions;
 
 class Permission extends Permissions
 {
@@ -12,7 +12,10 @@ class Permission extends Permissions
 
     protected $fillable = ['name','full_name','description','guard_name'];
 
-    protected static $logAttributes = ['name','full_name','description'];
-    
-    protected static $logName = 'Permission';
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+        ->logOnly(['name','full_name','description'])
+        ->useLogName('Permission');
+    }
 }

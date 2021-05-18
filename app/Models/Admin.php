@@ -21,18 +21,12 @@ class Admin extends Authenticatable
     
     protected $casts = ['email_verified_at' => 'datetime',];
 
-    public array $logAttributes = ['full_name','email','cpf','birthday'];
-
-    public ?string $logName = 'Administrator';
-
     public function getActivitylogOptions(): LogOptions
     {
-        return LogOptions::defaults();
+        return LogOptions::defaults()
+        ->logOnly(['full_name','email','cpf','birthday'])
+        ->useLogName('Administrator');
     }
-
-    /* protected static $logAttributes = ['full_name','email','cpf','birthday'];
-
-    protected static $logName = 'Administrator'; */
 
     /* public function sendPasswordResetNotification($token)
     {
