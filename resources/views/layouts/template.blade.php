@@ -20,7 +20,7 @@
 <body class="hold-transition login-page" {{-- style="background-color: #AF86CD;" --}}>
 <div class="login-box">
   <div class="login-logo mb-3">
-    <img src="{{asset('plugins/images/logo.png')}}" width="300">
+    <img src="{{asset('plugins/images/logo.png')}}" width="360">
   </div>
   <div class="card">
     @yield('content')
