@@ -29,5 +29,9 @@ Route::middleware('auth')->name('admin.')->group(function () {
         Route::get('change-password', [HomeAdminController::class, 'changePassword'])->name('change_password');
         Route::post('change-password', [HomeAdminController::class, 'changePasswordDo'])->name('change_password_do');
     });
+
+    Route::resource('admin', AdminController::class);
+
+    Route::resource('admin.permission', AdminHasPermissionController::class)->only(['index','store']);
 });
 /* ---------- FIM - ADMINISTRADOR ---------- */

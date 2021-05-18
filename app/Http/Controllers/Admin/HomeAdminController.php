@@ -16,7 +16,7 @@ class HomeAdminController extends Controller
             'name' => 'Home Page',
             'nameOther' => 'Personal Data',
         ];
-        /* $this->middleware('permission:show-home')->only('index'); */
+        $this->middleware('permission:show-home')->only('index');
     }
 
     public function index()
