@@ -17,4 +17,15 @@ return [
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
+    /*
+    |--------------------------------------------------------------------------
+    | Confirmation Language Lines
+    |--------------------------------------------------------------------------
+    */
+
+    'store'      => ':name created successfully!',
+    'update'     => ':name updated successfully!',
+    'destroy'    => ':name deleted successfully!',
+    'permission' => ':name profile permissions changed successfully.',
+    'permissionUser' => 'User permissions :name successfully changed.',
 ];
