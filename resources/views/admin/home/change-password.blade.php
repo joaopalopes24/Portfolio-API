@@ -10,13 +10,13 @@
       @csrf
       <div class="card-body">
         <div class="row">
-          <x-input class="col-xl-4 col-md-6 form-group" type="password" name="password_old" label="Senha Atual" minlength="8" feedback="true" required/>
+          <x-input class="col-xl-4 col-md-6" type="password" name="password_old" label="Senha Atual" minlength="8" feedback="true" required/>
         </div>
         <div class="row">
-          <x-input class="col-xl-4 col-md-6 form-group" type="password" name="password" label="Nova Senha" minlength="8" feedback="true" required/>
+          <x-input class="col-xl-4 col-md-6" type="password" name="password" label="Nova Senha" minlength="8" feedback="true" required/>
         </div>
         <div class="row">
-          <x-input class="col-xl-4 col-md-6 form-group" type="password" name="password_confirmation" label="Confirmar Senha" minlength="8" feedback="true" required/>
+          <x-input class="col-xl-4 col-md-6" type="password" name="password_confirmation" label="Confirmar Senha" minlength="8" feedback="true" required/>
         </div>
       </div>
       <x-footer-edit-create route="admin.home.index" name1="Ir para Página Inicial" name2="Alterar Senha"/>

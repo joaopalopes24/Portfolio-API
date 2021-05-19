@@ -35,10 +35,7 @@ class PatientController extends Controller
 
     public function store(PatientRequest $request)
     {
-        //dd($request);
         $values = $request->validated();
-
-        dd($values);
 
         Patient::create($values);
 
@@ -46,9 +43,7 @@ class PatientController extends Controller
     }
 
     public function show(Patient $patient)
-    {
-        dd($patient);
-        
+    {       
         $this->values['patient'] = $patient;
 
         return view('admin.patient.show', $this->values);
@@ -56,8 +51,6 @@ class PatientController extends Controller
 
     public function edit(Patient $patient)
     {
-        dd($patient);
-
         $this->values['patient'] = $patient;
 
         return view('admin.patient.edit', $this->values);
@@ -66,8 +59,6 @@ class PatientController extends Controller
     public function update(PatientRequest $request, Patient $patient)
     {
         $values = $request->validated();
-
-        dd($values);
 
         $patient->fill($values)->save();
 

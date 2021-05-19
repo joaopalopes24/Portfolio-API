@@ -12,7 +12,6 @@ class PatientFactory extends Factory
     public function definition()
     {
         return [
-            'photo' => '',
             'full_name' => $this->faker->name(),
             'mother_name' => $this->faker->name('female'),
             'birthday' => $this->faker->date(),
@@ -22,7 +21,7 @@ class PatientFactory extends Factory
             'adress' => $this->faker->streetName(),
             'number' => $this->faker->numberBetween(1, 1000),
             'complement' => $this->faker->secondaryAddress(),
-            'district' => $this->faker->state(),
+            'district' => $this->faker->citySuffix(),
             'city' => $this->faker->city(),
             'state_abbr' => $this->faker->stateAbbr(),
         ];

@@ -11,10 +11,10 @@
   <form class="needs-validation" action="{{route('admin.log.index')}}">
     <div class="card-body">
       <div class="row">
-        <x-input class="col-sm-3 form-group" name="subject_id" label="ID do Objeto" type="search" value="{{$request->subject_id}}"/>
-        <x-input class="col-sm-3 form-group" name="log_name" label="Objeto" type="search" value="{{$request->log_name}}"/>
-        <x-input class="col-sm-3 form-group" name="causer_id" label="ID do Usuário" type="search" value="{{$request->causer_id}}"/>
-        <x-input class="col-sm-3 form-group" name="description" label="Descrição" type="search" value="{{$request->description}}"/>
+        <x-input class="col-sm-3" name="subject_id" label="ID do Objeto" type="search" value="{{$request->subject_id}}"/>
+        <x-input class="col-sm-3" name="log_name" label="Objeto" type="search" value="{{$request->log_name}}"/>
+        <x-input class="col-sm-3" name="causer_id" label="ID do Usuário" type="search" value="{{$request->causer_id}}"/>
+        <x-input class="col-sm-3" name="description" label="Descrição" type="search" value="{{$request->description}}"/>
       </div>
     </div>
     <div class="card-footer">

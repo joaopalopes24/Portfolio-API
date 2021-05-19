@@ -15,19 +15,18 @@ class PatientRequest extends FormRequest
     public function rules()
     {
         return [
-            /* 'name' => ['required','string', Rule::unique('roles')->ignore($this->role)], */
             'full_name'   => 'required|string',
             'mother_name' => 'required|string',
             'birthday'    => 'required|date',
-            'cpf'         => 'required|string|size:14',
-            'cns'         => 'required|string|size:15',
+            'cpf'         => ['required','formato_cpf','cpf', Rule::unique('patients')->ignore($this->patient)],
+            'cns'         => ['required','cns', Rule::unique('patients')->ignore($this->patient)],
             'cep'         => 'required|string|size:8',
             'adress'      => 'required|max:50',
             'number'      => 'required|integer',
             'complement'  => 'nullable|max:30',
             'district'    => 'required|max:40',
             'city'        => 'required|max:40',
-            'state_abbr'  => ['required', Rule::in(['AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO','EX'])],
+            'state_abbr'  => ['required', Rule::in(['AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO'])],
         ];
     }
 
