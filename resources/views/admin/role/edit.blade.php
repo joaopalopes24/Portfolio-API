@@ -10,10 +10,10 @@
     @csrf
     <div class="card-body">
       <div class="row">
-        <x-input class="col-xl-4 col-md-6 form-group" name="name" label="Nome do Perfil" value="{{$role->name}}" feedback="true" required/>
+        <x-input class="col-xl-4 col-md-6" name="name" label="Nome do Perfil" value="{{$role->name}}" feedback="true" required/>
       </div>
       <div class="row">
-        <x-input class="col-xl-4 col-md-6 form-group" name="guard_name" label="Tipo do Perfil" value="{{$role->guard_name}}" disabled/>
+        <x-input class="col-xl-4 col-md-6" name="guard_name" label="Tipo do Perfil" value="{{$role->guard_name}}" disabled/>
       </div>
     </div>
     <x-footer-edit-create route="admin.role.index"/>

@@ -7,10 +7,10 @@
 <div class="card card-secondary card-outline">
   <div class="card-body">
     <div class="row">
-      <x-input class="col-xl-4 col-md-6 form-group" name="name" label="Nome do Perfil" value="{{$role->name}}" disabled/>
+      <x-input class="col-xl-4 col-md-6" name="name" label="Nome do Perfil" value="{{$role->name}}" disabled/>
     </div>
     <div class="row">
-      <x-input class="col-xl-4 col-md-6 form-group" name="name" label="Tipo do Perfil" value="{{$role->guard_name}}" disabled/>
+      <x-input class="col-xl-4 col-md-6" name="name" label="Tipo do Perfil" value="{{$role->guard_name}}" disabled/>
     </div>
   </div>
   <x-footer-show route="admin.role.index"/>

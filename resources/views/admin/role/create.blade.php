@@ -8,7 +8,7 @@
   <form class="needs-validation" action="{{route('admin.role.store')}}" method="post" novalidate>
     @csrf
     <div class="card-body">
-      <x-input class="col-xl-4 col-md-6 form-group" name="name" label="Nome do Perfil" feedback="true" required/>
+      <x-input class="col-xl-4 col-md-6" name="name" label="Nome do Perfil" feedback="true" required/>
     </div>
     <x-footer-edit-create route="admin.role.index"/>
   </form>

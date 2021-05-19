@@ -9,10 +9,10 @@
     @csrf
     <div class="card-body">
       <div class="row">
-        <x-input class="col-xl-4 col-md-6 form-group" name="full_name" label="Nome da Permissão" feedback="true" required/>
+        <x-input class="col-xl-4 col-md-6" name="full_name" label="Nome da Permissão" feedback="true" required/>
       </div>
       <div class="row">
-        <x-input class="col-xl-4 col-md-6 form-group" name="description" label="Descrição" feedback="true" required/>
+        <x-input class="col-xl-4 col-md-6" name="description" label="Descrição" feedback="true" required/>
       </div>
     </div>
     <x-footer-edit-create route="admin.permission.index"/>

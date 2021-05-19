@@ -19,7 +19,7 @@
     <div class="row">
       <x-input class="col-md-5 form-group" name="adress" label="Rua / Avenida" value="{{$patient->adress}}" disabled/>
       <x-input class="col-md-3 form-group" type="number" name="number" label="Número" value="{{$patient->number}}" disabled/>
-      <x-input class="col-md-4 form-group" name="complement" label="Complemento" value="{{$patient->complement}}" feedback="true"/>
+      <x-input class="col-md-4 form-group" name="complement" label="Complemento" value="{{$patient->complement}}" disabled/>
     </div>
     <div class="row">
       <x-input class="col-md-5 form-group" name="district" label="Bairro" value="{{$patient->district}}" disabled/>

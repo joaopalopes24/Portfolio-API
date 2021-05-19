@@ -9,19 +9,19 @@
     @csrf
     <div class="card-body">
       <div class="row">
-        <x-input class="col-xl-4 col-md-6 form-group" name="full_name" label="Nome Completo" feedback="true" required/>
+        <x-input class="col-xl-4 col-md-6" name="full_name" label="Nome Completo" feedback="true" required/>
       </div>
       <div class="row">
-        <x-input class="col-xl-4 col-md-6 form-group" name="email" label="E-mail" type="email" placeholder="exemplo@exemplo" feedback="true" required/>
+        <x-input class="col-xl-4 col-md-6" name="email" label="E-mail" type="email" placeholder="exemplo@exemplo" feedback="true" required/>
       </div>
       <div class="row">
-        <x-input class="col-xl-4 col-md-6 form-group" label="CPF" placeholder="SOMENTE NÚMEROS" data-mask="000.000.000-00" feedback="true" required/>
+        <x-input class="col-xl-4 col-md-6" label="CPF" placeholder="SOMENTE NÚMEROS" data-mask="000.000.000-00" feedback="true" required/>
       </div>
       <div class="row">
-        <x-input class="col-xl-4 col-md-6 form-group" name="birthday" label="Data de Aniversário" type="date" feedback="true" required/>
+        <x-input class="col-xl-4 col-md-6" name="birthday" label="Data de Aniversário" type="date" feedback="true" required/>
       </div>
       <div class="row">
-        <div class="col-xl-4 col-sm-6 form-group" style="margin-bottom: .7rem;">
+        <div class="col-xl-4 col-sm-6" style="margin-bottom: .7rem;">
           <p class="text-center" style="margin-bottom: 0;"><strong>--------- PERFIS DO USUÁRIO ---------</strong></p>
         </div>
       </div>
