@@ -15,12 +15,11 @@ class PatientRequest extends FormRequest
     public function rules()
     {
         return [
-            /* 'name' => ['required','string', Rule::unique('roles')->ignore($this->role)], */
             'full_name'   => 'required|string',
             'mother_name' => 'required|string',
             'birthday'    => 'required|date',
-            'cpf'         => 'required|string|size:14',
-            'cns'         => 'required|string|size:15',
+            'cpf'         => ['required','formato_cpf','cpf', Rule::unique('patients')->ignore($this->patient)],
+            'cns'         => ['required','cns', Rule::unique('patients')->ignore($this->patient)],
             'cep'         => 'required|string|size:8',
             'adress'      => 'required|max:50',
             'number'      => 'required|integer',
