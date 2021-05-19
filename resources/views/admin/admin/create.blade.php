@@ -15,7 +15,7 @@
         <x-input class="col-xl-4 col-md-6 form-group" name="email" label="E-mail" type="email" placeholder="exemplo@exemplo" feedback="true" required/>
       </div>
       <div class="row">
-        <x-input class="col-xl-4 col-md-6 form-group" label="CPF" placeholder="000.000.000-00" data-mask="000.000.000-00" feedback="true" required/>
+        <x-input class="col-xl-4 col-md-6 form-group" label="CPF" placeholder="SOMENTE NÚMEROS" data-mask="000.000.000-00" feedback="true" required/>
       </div>
       <div class="row">
         <x-input class="col-xl-4 col-md-6 form-group" name="birthday" label="Data de Aniversário" type="date" feedback="true" required/>

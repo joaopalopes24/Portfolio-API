@@ -23,7 +23,7 @@ class CreatePatientsTable extends Migration
             $table->string('cns',15)->unique();
             $table->string('cep',8);
             $table->string('adress',50);
-            $table->integer('number');
+            $table->unsignedInteger('number');
             $table->string('complement',30)->nullable();
             $table->string('district',40);
             $table->string('city', 40);

@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminHasPermissionController;
 use App\Http\Controllers\Admin\HomeAdminController;
 use App\Http\Controllers\Admin\LogController;
+use App\Http\Controllers\Admin\PatientController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\RoleHasPermissionController;
@@ -38,7 +39,7 @@ Route::middleware('auth')->name('admin.')->group(function () {
 
     Route::resource('log', LogController::class)->only(['index','show']);
 
-    /* Route::resource('client', ClientController::class); */
+    Route::resource('patient', PatientController::class);
 
     Route::resource('admin', AdminController::class);
 
