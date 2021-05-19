@@ -22,8 +22,8 @@ class ChangePasswordRequest extends FormRequest
     public function attributes()
     {
         return [
-            'password_old' => 'Current Password',
-            'password'     => 'New Password',
+            'password_old' => 'Senha Atual',
+            'password'     => 'Nova Senha',
         ];
     }
 }

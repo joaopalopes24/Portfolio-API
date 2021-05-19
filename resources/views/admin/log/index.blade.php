@@ -6,20 +6,20 @@
 <!-- Home Content -->
 <div class="card card-secondary">
   <div class="card-header">
-    <h3 class="card-title">Search Specific Log</h3>
+    <h3 class="card-title">Pesquisar Log Específico</h3>
   </div>
   <form class="needs-validation" action="{{route('admin.log.index')}}">
     <div class="card-body">
       <div class="row">
-        <x-input class="col-sm-3 form-group" name="subject_id" label="Object ID" type="search" value="{{$request->subject_id}}"/>
-        <x-input class="col-sm-3 form-group" name="log_name" label="Object" type="search" value="{{$request->log_name}}"/>
-        <x-input class="col-sm-3 form-group" name="causer_id" label="User ID" type="search" value="{{$request->causer_id}}"/>
-        <x-input class="col-sm-3 form-group" label="Description" type="search" value="{{$request->description}}"/>
+        <x-input class="col-sm-3 form-group" name="subject_id" label="ID do Objeto" type="search" value="{{$request->subject_id}}"/>
+        <x-input class="col-sm-3 form-group" name="log_name" label="Objeto" type="search" value="{{$request->log_name}}"/>
+        <x-input class="col-sm-3 form-group" name="causer_id" label="ID do Usuário" type="search" value="{{$request->causer_id}}"/>
+        <x-input class="col-sm-3 form-group" name="description" label="Descrição" type="search" value="{{$request->description}}"/>
       </div>
     </div>
     <div class="card-footer">
-      <button type="submit" class="btn btn-outline-info float-right"><i class="fas fa-search"></i> Search</button>
-      <button type="button" class="btn btn-outline-danger float-right" onclick="ClearFields();" style="margin-right: 10px;"><i class="fas fa-times"></i> Clear Fields</button>
+      <button type="submit" class="btn btn-outline-info float-right"><i class="fas fa-search"></i> Pesquisar</button>
+      <button type="button" class="btn btn-outline-danger float-right" onclick="ClearFields();" style="margin-right: 10px;"><i class="fas fa-times"></i> Limpar Campos</button>
     </div>
   </form>
 </div>
@@ -29,12 +29,12 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>Object ID</th>
-          <th>Object</th>
-          <th>User ID</th>
-          <th>User</th>
-          <th>Description</th>
-          <th>Actions</th>
+          <th>ID do Objeto</th>
+          <th>Objeto</th>
+          <th>ID do Usuário</th>
+          <th>Usuário</th>
+          <th>Descrição</th>
+          <th>Ações</th>
         </tr>
       </thead>
       <tbody>

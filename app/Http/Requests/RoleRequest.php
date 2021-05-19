@@ -22,7 +22,7 @@ class RoleRequest extends FormRequest
     public function attributes()
     {
         return [
-            'name' => 'Role Name',
+            'name' => 'Nome do Perfil',
         ];
     }
 }

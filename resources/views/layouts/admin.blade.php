@@ -34,14 +34,14 @@
           <i class="far fa-user"></i>
         </a>
         <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow" style="left: 0px; right: inherit;">
-          <li><a href="{{route('admin.home.profile')}}" class="dropdown-item">My Profile</a></li>
-          <li><a href="{{route('admin.home.change_password')}}" class="dropdown-item">Change Password</a></li>
+          <li><a href="{{route('admin.home.profile')}}" class="dropdown-item">Meu Perfil</a></li>
+          <li><a href="{{route('admin.home.change_password')}}" class="dropdown-item">Alterar Senha</a></li>
           <li class="dropdown-divider"></li>
           <li>
             <a class="dropdown-item" href="{{ route('logout') }}"
               onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">
-              <i class="mr-2 fa fa-sign-out-alt"></i>Logout
+              <i class="mr-2 fa fa-sign-out-alt"></i>Sair
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
               @csrf
@@ -55,17 +55,17 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <a href="#" class="brand-link text-center">
       <img src="{{asset('plugins/images/logo-2.png')}}" alt="#" class="brand-image" style="width: 60px;">
-      <span class="brand-text font-weight-light"><strong>Challenge FullStack</strong></span>
+      <span class="brand-text font-weight-light"><strong>Desafio FullStack</strong></span>
     </a>
     <div class="sidebar">
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <x-menu permission="show-home" route="admin.home.index" active="admin.home.index" icon="fas fa-chart-bar" name="Home Page"/>
-          <x-menu permission="show-system-logs" route="admin.log.index" active="admin.log." icon="fas fa-sync" name="Logs"/>
-          <x-menu permission="show-patients" route="admin.home.index" active="admin.patient." icon="fas fa-hospital-user" name="Patients"/>
-          <x-menu permission="show-administrators" route="admin.admin.index" active="admin.admin." icon="fas fa-user-shield" name="Administrators"/>
-          <x-menu permission="show-roles" route="admin.role.index" active="admin.role." icon="far fa-newspaper" name="Roles"/>
-          <x-menu permission="show-permissions" route="admin.permission.index" active="admin.permission." icon="fas fa-paperclip" name="Permissions"/>
+          <x-menu permission="visualizar-pagina-inicial" route="admin.home.index" active="admin.home.index" icon="fas fa-chart-bar" name="Página Inicial"/>
+          <x-menu permission="visualizar-logs-do-sistema" route="admin.log.index" active="admin.log." icon="fas fa-sync" name="Logs"/>
+          <x-menu permission="visualizar-pacientes" route="admin.home.index" active="admin.patient." icon="fas fa-hospital-user" name="Pacientes"/>
+          <x-menu permission="visualizar-administradores" route="admin.admin.index" active="admin.admin." icon="fas fa-user-shield" name="Administradores"/>
+          <x-menu permission="visualizar-perfis" route="admin.role.index" active="admin.role." icon="far fa-newspaper" name="Perfis"/>
+          <x-menu permission="visualizar-permissoes" route="admin.permission.index" active="admin.permission." icon="fas fa-paperclip" name="Permissões"/>
         </ul>
       </nav>
     </div>
@@ -99,9 +99,9 @@
     <a href="https://gitlab.com/joaopalopes24/challenge-om30" target="_blank">
       João Pedro Lopes.
     </a></strong> 
-    All rights reserved.
+    Todos os direitos reservados.
     <div class="float-right d-none d-sm-inline">
-      <strong>Version</strong> 1.0.0
+      <strong>Versão</strong> 1.0.0
     </div>
   </footer>
 </div>

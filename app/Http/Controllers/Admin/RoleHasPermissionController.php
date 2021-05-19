@@ -12,10 +12,10 @@ class RoleHasPermissionController extends Controller
     public function __construct()
     {
         $this->values = [
-            'name' => 'Permissions - Role',
-            'nameOther' => 'Permissions',
+            'name' => 'Permissões - Perfil',
+            'nameOther' => 'Permissões',
         ];
-        $this->middleware('permission:show-and-edit-permissions-for-roles')->only(['index','store']);
+        $this->middleware('permission:visualizar-e-alterar-permissoes-do-perfil')->only(['index','store']);
     }
 
     public function index(Role $role)

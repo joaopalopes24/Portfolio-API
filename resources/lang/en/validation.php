@@ -148,10 +148,10 @@ return [
     */
 
     'attributes' => [
-        'name' => 'Name',
-        'email' => 'Email',
-        'cpf' => 'CPF',
-        'password'     => 'Password',
+        'full_name' => 'Full Name',
+        'email'     => 'Email',
+        'cpf'       => 'CPF',
+        'password'  => 'Password',
     ],
 
 ];

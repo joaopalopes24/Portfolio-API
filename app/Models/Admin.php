@@ -25,7 +25,7 @@ class Admin extends Authenticatable
     {
         return LogOptions::defaults()
         ->logOnly(['full_name','email','cpf','birthday'])
-        ->useLogName('Administrator');
+        ->useLogName('Administrador');
     }
 
     public function sendPasswordResetNotification($token)

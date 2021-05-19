@@ -23,6 +23,6 @@ class Patient extends Model
         ->logOnly(['photo','full_name','mother_name','birthday',
                   'cpf','cns','cep','adress','number','complement',
                   'district','city','state_abbr'])
-        ->useLogName('Patient');
+        ->useLogName('Paciente');
     }
 }

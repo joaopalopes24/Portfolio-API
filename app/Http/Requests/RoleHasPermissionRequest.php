@@ -21,7 +21,7 @@ class RoleHasPermissionRequest extends FormRequest
     public function attributes()
     {
         return [
-            'permissions' => 'Role Permissions',
+            'permissions' => 'Permissões do Perfil',
         ];
     }
 }

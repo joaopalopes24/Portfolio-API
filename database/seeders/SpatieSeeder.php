@@ -16,7 +16,7 @@ class SpatieSeeder extends Seeder
     public function run()
     {
         DB::table('roles')->insert([
-            'name'       => 'Master Administrator',
+            'name'       => 'Administrador Master',
             'guard_name' => 'web',
         ]);
 
@@ -25,155 +25,153 @@ class SpatieSeeder extends Seeder
             'model_type' => 'App\Models\Admin',
             'model_id'   => '1',
         ]);
-        
-        /* Home Page */
+
+        /* Página Inicial */
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Show Home'),
-            'full_name'   => 'Show Home',
-            'description' => 'Show all detailed system.',
+            'name'        => Str::slug('Visualizar Página Inicial'),
+            'full_name'   => 'Visualizar Página Inicial',
+            'description' => 'Visualizar os dados da página inicial.',
             'guard_name' => 'web',
         ]);
-
-        /* --------------- GERECIAMENTO DE USUÁRIOS --------------- */
 
         /* Logs */
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Show System Logs'),
-            'full_name'   => 'Show System Logs',
-            'description' => 'Show all system logs involving data changes.',
+            'name'        => Str::slug('Visualizar Logs do Sistema'),
+            'full_name'   => 'Visualizar Logs do Sistema',
+            'description' => 'Visualizar todos os logs do sistema envolvendo alterações de dados.',
             'guard_name' => 'web',
         ]);
 
-        /* Patients */
+        /* Pacientes */
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Show Patients'),
-            'full_name'   => 'Show Patients',
-            'description' => 'Show all system patients (photo, name, mother_name, birthday, CPF, CNS and adress).',
-            'guard_name' => 'web',
-        ]);
-
-        DB::table('permissions')->insert([
-            'name'        => Str::slug('Create Patients'),
-            'full_name'   => 'Create Patients',
-            'description' => 'Create system patients (photo, name, mother_name, birthday, CPF, CNS and adress).',
+            'name'        => Str::slug('Visualizar Pacientes'),
+            'full_name'   => 'Visualizar Pacientes',
+            'description' => 'Visualizar todos os pacientes do sistema (foto, nome, nome da mãe, data de nascimento, CPF, CNS e endereço).',
             'guard_name' => 'web',
         ]);
 
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Edit Patients'),
-            'full_name'   => 'Edit Patients',
-            'description' => 'Edit system patients (photo, name, mother_name, birthday, CPF, CNS and adress).',
+            'name'        => Str::slug('Cadastrar Pacientes'),
+            'full_name'   => 'Cadastrar Pacientes',
+            'description' => 'Cadastrar os pacientes do sistema (foto, nome, nome da mãe, data de nascimento, CPF, CNS e endereço).',
             'guard_name' => 'web',
         ]);
 
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Delete Patients'),
-            'full_name'   => 'Delete Patients',
-            'description' => 'Delete system patients (photo, name, mother_name, birthday, CPF, CNS and adress).',
+            'name'        => Str::slug('Editar Pacientes'),
+            'full_name'   => 'Editar Pacientes',
+            'description' => 'Editar os pacientes do sistema (foto, nome, nome da mãe, data de nascimento, CPF, CNS e endereço).',
             'guard_name' => 'web',
         ]);
 
-        /* Administrators */
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Show Administrators'),
-            'full_name'   => 'Show Administrators',
-            'description' => 'Show all system administrators (name, CPF, email and birthday).',
+            'name'        => Str::slug('Deletar Pacientes'),
+            'full_name'   => 'Deletar Pacientes',
+            'description' => 'Deletar os pacientes do sistema (foto, nome, nome da mãe, data de nascimento, CPF, CNS e endereço).',
+            'guard_name' => 'web',
+        ]);
+
+        /* Administradores */
+        DB::table('permissions')->insert([
+            'name'        => Str::slug('Visualizar Administradores'),
+            'full_name'   => 'Visualizar Administradores',
+            'description' => 'Visualizar todos os administradores do sistema (nome, CPF, e-mail e data de aniversário).',
             'guard_name' => 'web',
         ]);
         
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Create Administrators'),
-            'full_name'   => 'Create Administrators',
-            'description' => 'Create system administrators (name, CPF, email and birthday).',
+            'name'        => Str::slug('Cadastrar Administradores'),
+            'full_name'   => 'Cadastrar Administradores',
+            'description' => 'Cadastrar os administradores do sistema (nome, CPF, e-mail e data de aniversário).',
             'guard_name' => 'web',
         ]);
 
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Edit Administrators'),
-            'full_name'   => 'Edit Administrators',
-            'description' => 'Edit system administrators (name, CPF, email and birthday).',
+            'name'        => Str::slug('Editar Administradores'),
+            'full_name'   => 'Editar Administradores',
+            'description' => 'Editar os administradores do sistema (nome, CPF, e-mail e data de aniversário).',
             'guard_name' => 'web',
         ]);
 
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Delete Administrators'),
-            'full_name'   => 'Delete Administrators',
-            'description' => 'Delete system administrators (name, CPF, email and birthday).',
+            'name'        => Str::slug('Deletar Administradores'),
+            'full_name'   => 'Deletar Administradores',
+            'description' => 'Deletar os administradores do sistema (nome, CPF, e-mail e data de aniversário).',
             'guard_name' => 'web',
         ]);
 
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Show and Edit Permissions for Administrators'),
-            'full_name'   => 'Show and Edit Permissions for Administrators',
-            'description' => 'Show and edit permissions of each administrator separately.',
+            'name'        => Str::slug('Visualizar e Alterar Permissões dos Administradores'),
+            'full_name'   => 'Visualizar e Alterar Permissões dos Administradores',
+            'description' => 'Visualizar e alterar permissões de cada administrador separadamente.',
             'guard_name' => 'web',
         ]);
 
-        /* Roles */
+        /* Perfis */
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Show Roles'),
-            'full_name'   => 'Show Roles',
-            'description' => 'Show all system roles.',
+            'name'        => Str::slug('Visualizar Perfis'),
+            'full_name'   => 'Visualizar Perfis',
+            'description' => 'Visualizar todos os Perfis do sistema.',
             'guard_name' => 'web',
         ]);
         
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Create Roles'),
-            'full_name'   => 'Create Roles',
-            'description' => 'Create system roles.',
+            'name'        => Str::slug('Cadastrar Perfis'),
+            'full_name'   => 'Cadastrar Perfis',
+            'description' => 'Cadastrar os Perfis do sistema.',
             'guard_name' => 'web',
         ]);
 
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Edit Roles'),
-            'full_name'   => 'Edit Roles',
-            'description' => 'Edit system roles.',
+            'name'        => Str::slug('Editar Perfis'),
+            'full_name'   => 'Editar Perfis',
+            'description' => 'Editar os Perfis do sistema.',
             'guard_name' => 'web',
         ]);
 
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Delete Roles'),
-            'full_name'   => 'Delete Roles',
-            'description' => 'Delete system roles.',
+            'name'        => Str::slug('Deletar Perfis'),
+            'full_name'   => 'Deletar Perfis',
+            'description' => 'Deletar os Perfis do sistema.',
             'guard_name' => 'web',
         ]);
 
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Show and Edit Permissions for Roles'),
-            'full_name'   => 'Show and Edit Permissions for Roles',
-            'description' => 'Show and edit permissions of each role separately.',
+            'name'        => Str::slug('Visualizar e Alterar Permissões do Perfil'),
+            'full_name'   => 'Visualizar e Alterar Permissões do Perfil',
+            'description' => 'Visualizar e alterar permissões de cada perfil separadamente.',
             'guard_name' => 'web',
         ]);
 
-        /* Permissions */
+        /* Permissões */
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Show Permissions'),
-            'full_name'   => 'Show Permissions',
-            'description' => 'Show all system permissions.',
+            'name'        => Str::slug('Visualizar Permissões'),
+            'full_name'   => 'Visualizar Permissões',
+            'description' => 'Visualizar todos as permissões do sistema.',
             'guard_name' => 'web',
         ]);
         
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Create Permissions'),
-            'full_name'   => 'Create Permissions',
-            'description' => 'Create system permissions.',
+            'name'        => Str::slug('Cadastrar Permissões'),
+            'full_name'   => 'Cadastrar Permissões',
+            'description' => 'Cadastrar as permissões do sistema.',
             'guard_name' => 'web',
         ]);
 
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Edit Permissions'),
-            'full_name'   => 'Edit Permissions',
-            'description' => 'Edit system permissions.',
+            'name'        => Str::slug('Editar Permissões'),
+            'full_name'   => 'Editar Permissões',
+            'description' => 'Editar as permissões do sistema.',
             'guard_name' => 'web',
         ]);
 
         DB::table('permissions')->insert([
-            'name'        => Str::slug('Delete Permissions'),
-            'full_name'   => 'Delete Permissions',
-            'description' => 'Delete system permissions.',
+            'name'        => Str::slug('Deletar Permissões'),
+            'full_name'   => 'Deletar Permissões',
+            'description' => 'Deletar as permissões do sistema.',
             'guard_name' => 'web',
         ]);
-
+        
         /* RoleHasPermissions */
         for ($i = 1; $i <= 20; $i++) {
             DB::table('role_has_permissions')->insert([

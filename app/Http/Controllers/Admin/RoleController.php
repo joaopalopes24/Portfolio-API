@@ -11,13 +11,13 @@ class RoleController extends Controller
     public function __construct()
     {
         $this->values = [
-            'name' => 'Role',
-            'pluralName' => 'Roles',
+            'name' => 'Perfil',
+            'pluralName' => 'Perfis',
         ];
-        $this->middleware('permission:show-roles')->only(['index','show']);
-        $this->middleware('permission:create-roles')->only(['create','store']);
-        $this->middleware('permission:edit-roles')->only(['edit','update']);
-        $this->middleware('permission:delete-roles')->only('destroy');
+        $this->middleware('permission:visualizar-perfis')->only(['index','show']);
+        $this->middleware('permission:cadastrar-perfis')->only(['create','store']);
+        $this->middleware('permission:editar-perfis')->only(['edit','update']);
+        $this->middleware('permission:deletar-perfis')->only('destroy');
     }
 
     public function index()

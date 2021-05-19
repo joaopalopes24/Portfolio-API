@@ -21,7 +21,7 @@ class AdminHasPermissionRequest extends FormRequest
     public function attributes()
     {
         return [
-            'permissions' => 'Administrator Permissions',
+            'permissions' => 'Permissões do Administrador',
         ];
     }
 }

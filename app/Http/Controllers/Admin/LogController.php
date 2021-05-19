@@ -11,10 +11,10 @@ class LogController extends Controller
     public function __construct()
     {
         $this->values = [
-            'name' => 'System Log',
-            'pluralName' => 'System Logs',
+            'name' => 'Log do Sistema',
+            'pluralName' => 'Logs do Sistema',
         ];
-        $this->middleware('permission:show-system-logs')->only(['index','show']);
+        $this->middleware('permission:visualizar-logs-do-sistema')->only(['index','show']);
     }
 
     public function index(Request $request)

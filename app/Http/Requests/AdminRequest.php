@@ -26,11 +26,11 @@ class AdminRequest extends FormRequest
     public function attributes()
     {
         return [
-            'full_name' => 'Full Name',
-            'email'     => 'Email',
+            'full_name' => 'Nome Completo',
+            'email'     => 'E-mail',
             'cpf'       => 'CPF',
-            'birthday'  => 'Birthday',
-            'roles'     => 'User Roles',
+            'birthday'  => 'Data de Nascimento',
+            'roles'     => 'Perfis do Usuário',
         ];
     }
 }

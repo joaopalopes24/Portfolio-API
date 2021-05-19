@@ -16,6 +16,6 @@ class Role extends Roles
     {
         return LogOptions::defaults()
         ->logOnly(['name'])
-        ->useLogName('Role');
+        ->useLogName('Perfil');
     }
 }

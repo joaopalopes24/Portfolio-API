@@ -12,13 +12,13 @@ class AdminController extends Controller
     public function __construct()
     {
         $this->values = [
-            'name' => 'Administrator',
-            'pluralName' => 'Administrators',
+            'name' => 'Administrador',
+            'pluralName' => 'Administradores',
         ];
-        $this->middleware('permission:show-administrators')->only(['index','show']);
-        $this->middleware('permission:create-administrators')->only(['create','store']);
-        $this->middleware('permission:edit-administrators')->only(['edit','update']);
-        $this->middleware('permission:delete-administrators')->only('destroy');
+        $this->middleware('permission:visualizar-administradores')->only(['index','show']);
+        $this->middleware('permission:cadastrar-administradores')->only(['create','store']);
+        $this->middleware('permission:editar-administradores')->only(['edit','update']);
+        $this->middleware('permission:deletar-administradores')->only('destroy');
     }
 
     public function index()

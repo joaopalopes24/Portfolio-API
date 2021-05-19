@@ -23,8 +23,8 @@ class PermissionRequest extends FormRequest
     public function attributes()
     {
         return [
-            'full_name'   => 'Permission Name',
-            'description' => 'Description',
+            'full_name'   => 'Nome da Permissão',
+            'description' => 'Descrição',
         ];
     }
 }
