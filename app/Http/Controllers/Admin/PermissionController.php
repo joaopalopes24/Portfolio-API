@@ -12,13 +12,13 @@ class PermissionController extends Controller
     public function __construct()
     {
         $this->values = [
-            'name' => 'Permission',
-            'pluralName' => 'Permissions',
+            'name' => 'Permissão',
+            'pluralName' => 'Permissões',
         ];
-        $this->middleware('permission:show-permissions')->only(['index','show']);
-        $this->middleware('permission:create-permissions')->only(['create','store']);
-        $this->middleware('permission:edit-permissions')->only(['edit','update']);
-        $this->middleware('permission:delete-permissions')->only('destroy');
+        $this->middleware('permission:visualizar-permissoes')->only(['index','show']);
+        $this->middleware('permission:cadastrar-permissoes')->only(['create','store']);
+        $this->middleware('permission:editar-permissoes')->only(['edit','update']);
+        $this->middleware('permission:deletar-permissoes')->only('destroy');
     }
 
     public function index()

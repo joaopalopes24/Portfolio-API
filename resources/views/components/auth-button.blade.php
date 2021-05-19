@@ -2,8 +2,8 @@
 
 @php
   $route = $route ?? NULL;
-  $name1 = $name1 ?? 'Name 01';
-  $name2 = $name2 ?? 'Name 02';
+  $name1 = $name1 ?? 'Nome 01';
+  $name2 = $name2 ?? 'Nome 02';
 @endphp
 
 <div class="row">

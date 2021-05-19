@@ -16,6 +16,6 @@ class Permission extends Permissions
     {
         return LogOptions::defaults()
         ->logOnly(['name','full_name','description'])
-        ->useLogName('Permission');
+        ->useLogName('Permissão');
     }
 }

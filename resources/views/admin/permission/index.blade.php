@@ -5,16 +5,16 @@
 @section('content')
 <!-- Home Content -->
 <div class="card card-secondary card-outline">
-  <x-button-create permission="create-permissions" route="admin.permission.create"/>
+  <x-button-create permission="cadastrar-permissoes" route="admin.permission.create"/>
   <div class="card-body table-responsive p-0">
     <table class="table table-bordered table-striped dataTable dtr-inline">
       <thead>
         <tr>
           <th>#</th>
-          <th>Permission Name</th>
+          <th>Nome da Permissão</th>
           <th>Slug</th>
-          <th>Description</th>
-          <th>Actions</th>
+          <th>Descrição</th>
+          <th>Ações</th>
         </tr>
       </thead>
       <tbody>
@@ -27,8 +27,8 @@
           <td>
             <div class="btn-group">
               <x-button-show route="admin.permission.show" parameter1="{{$permission->id}}"/>
-              <x-button-edit permission="edit-permissions" route="admin.permission.edit" parameter1="{{$permission->id}}"/>
-              <x-button-delete permission="delete-permissions" id="{{$permission->id}}"/>
+              <x-button-edit permission="editar-permissoes" route="admin.permission.edit" parameter1="{{$permission->id}}"/>
+              <x-button-delete permission="deletar-permissoes" id="{{$permission->id}}"/>
             </div>
             <x-modal-delete id="{{$permission->id}}" route="admin.permission.destroy" name="{{$name}}" parameter1="{{$permission->id}}"/>
           </td>

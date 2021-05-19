@@ -13,10 +13,10 @@ class HomeAdminController extends Controller
     public function __construct()
     {
         $this->values = [
-            'name' => 'Home Page',
-            'nameOther' => 'Personal Data',
+            'name' => 'Página Inicial',
+            'nameOther' => 'Dados Pessoais',
         ];
-        $this->middleware('permission:show-home')->only('index');
+        $this->middleware('permission:visualizar-pagina-inicial')->only('index');
     }
 
     public function index()

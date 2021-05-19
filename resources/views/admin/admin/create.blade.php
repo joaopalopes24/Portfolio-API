@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('title', $name)
 @section('subtitle', $pluralName)
-@section('caption', 'Create')
+@section('caption', 'Cadastrar')
 @section('content')
 <!-- Home Content -->
 <div class="card card-secondary card-outline">
@@ -9,20 +9,20 @@
     @csrf
     <div class="card-body">
       <div class="row">
-        <x-input class="col-xl-4 col-md-6 form-group" name="full_name" label="Full Name" feedback="true" required/>
+        <x-input class="col-xl-4 col-md-6 form-group" name="full_name" label="Nome Completo" feedback="true" required/>
       </div>
       <div class="row">
-        <x-input class="col-xl-4 col-md-6 form-group" label="Email" type="email" placeholder="example@example" feedback="true" required/>
+        <x-input class="col-xl-4 col-md-6 form-group" name="email" label="E-mail" type="email" placeholder="exemplo@exemplo" feedback="true" required/>
       </div>
       <div class="row">
         <x-input class="col-xl-4 col-md-6 form-group" label="CPF" placeholder="000.000.000-00" data-mask="000.000.000-00" feedback="true" required/>
       </div>
       <div class="row">
-        <x-input class="col-xl-4 col-md-6 form-group" label="Birthday" type="date" feedback="true" required/>
+        <x-input class="col-xl-4 col-md-6 form-group" name="birthday" label="Data de Aniversário" type="date" feedback="true" required/>
       </div>
       <div class="row">
         <div class="col-xl-4 col-sm-6 form-group" style="margin-bottom: .7rem;">
-          <p class="text-center" style="margin-bottom: 0;"><strong>--------- USER ROLES ---------</strong></p>
+          <p class="text-center" style="margin-bottom: 0;"><strong>--------- PERFIS DO USUÁRIO ---------</strong></p>
         </div>
       </div>
       @foreach($roles as $role)

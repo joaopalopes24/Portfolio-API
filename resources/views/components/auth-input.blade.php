@@ -15,10 +15,10 @@
   <input class="form-control" id="{{$name}}" type="{{$type}}" name="{{$name}}" placeholder="{{$placeholder}}" value="{{$value}}" {!!$attributes->merge()!!}>
   @isset($feedback)
     <div class="invalid-feedback">
-      Required field!
+      Campo Obrigatório!
     </div>
     <div class="valid-feedback">
-      Looks good!
+      OK!
     </div>
   @endisset
 </div>

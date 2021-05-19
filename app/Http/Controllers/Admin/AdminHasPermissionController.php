@@ -12,10 +12,10 @@ class AdminHasPermissionController extends Controller
     public function __construct()
     {
         $this->values = [
-            'name' => 'Permissons - Administrator',
-            'nameOther' => 'Permissons',
+            'name' => 'Permissões - Administrador',
+            'nameOther' => 'Permissões',
         ];
-        $this->middleware('permission:show-and-edit-permissions-for-administrators')->only(['index','store']);
+        $this->middleware('permission:visualizar-e-alterar-permissoes-dos-administradores')->only(['index','store']);
     }
 
     public function index(Admin $admin)

@@ -17,10 +17,10 @@
   <link rel="stylesheet" href="{{asset('plugins/toastr/toastr.min.css')}}">
 </head>
 
-<body class="hold-transition login-page" {{-- style="background-color: #AF86CD;" --}}>
+<body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo mb-3">
-    <img src="{{asset('plugins/images/logo.png')}}" width="360">
+    <a href="{{ route('login') }}"><img src="{{asset('plugins/images/logo.png')}}" width="360"></a>
   </div>
   <div class="card">
     @yield('content')

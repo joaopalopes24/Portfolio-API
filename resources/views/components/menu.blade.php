@@ -2,7 +2,7 @@
 
 @php
   $icon = $icon ?? 'fas fa-chart-bar';
-  $name = $name ?? 'Test Menu';
+  $name = $name ?? 'Menu Teste';
 @endphp
 
 @can($permission)
