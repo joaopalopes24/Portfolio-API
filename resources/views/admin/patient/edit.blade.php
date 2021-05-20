@@ -10,11 +10,11 @@
   <div class="callout callout-info">
     <div class="row">
       @php
-        $patient->photo ? $url = "storage/patient/$patient->photo" : $url = "plugins/images/userX.png";
+        $patient->photo ? $url = "storage/$patient->photo" : $url = "plugins/images/userX.png";
       @endphp
       <img class="profile-user-img img-fluid img-circle" src="{{asset($url)}}" alt="Foto de Perfil do Usuário">
-      <x-input class="col-md-7" type="file" name="photo" label="Foto de Perfil" feedback="true"/>
-      <div class="col-md-3" style="margin-top: 40px;">
+      <x-input-file class="col-md-5" name="photo" label="Foto de Perfil (preferencialmente fotos quadradas)" feedback="true"/>
+      <div class="col-md-3 offset-md-2" style="margin-top: 40px;">
         <div class="form-group">
           <div class="custom-control custom-checkbox">
             <input class="custom-control-input" type="checkbox" id="not_photo" name="not_photo" onclick="notPhoto()">

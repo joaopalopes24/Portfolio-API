@@ -62,11 +62,7 @@ class PatientController extends Controller
     {
         $values = $request->validated();
 
-        if(array_key_exists('not_photo',$values)){
-            $values = $this->deleteImage($values,$patient->photo);
-        } else {
-            $values = $this->createImage($values,$patient);
-        }
+        array_key_exists('not_photo',$values) ? $values = $this->deleteImage($values,$patient->photo) : $values = $this->createImage($values,$patient) ;
 
         $patient->fill($values)->save();
 
@@ -86,28 +82,21 @@ class PatientController extends Controller
     {
         if(array_key_exists('photo',$values)){
             $photo = $values['photo'];
-            $name = uniqid(date('HisYmd'));
-            $extension = $photo->getClientOriginalExtension();
-            $nameFile = "$name.$extension";
-
+            
             if($patient !== NULL){
                 if($patient->photo !== NULL){
                     $values = $this->deleteImage($values,$patient->photo);
                 }
             }
-            
-            $values['photo'] = $nameFile;
-            Storage::putFileAs('patient', $photo, "$nameFile");
 
-            return $values;
+            $values['photo'] = Storage::putFile('patient', $photo);
         }
-
         return $values;
     }
 
     protected function deleteImage($values,$photo)
     {
-        Storage::delete("patient/$photo");
+        Storage::delete("$photo");
         $values['photo'] = NULL;
 
         return $values;
