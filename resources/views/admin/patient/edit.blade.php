@@ -10,9 +10,9 @@
   <div class="callout callout-info">
     <div class="row">
       @php
-        $patient->photo ? $photo = $patient->photo : $photo = "userX.png";
+        $patient->photo ? $url = "storage/patient/$patient->photo" : $url = "plugins/images/userX.png";
       @endphp
-      <img class="profile-user-img img-fluid img-circle" src="{{asset("storage/patient/$photo")}}" alt="Foto de Perfil do Usuário">
+      <img class="profile-user-img img-fluid img-circle" src="{{asset($url)}}" alt="Foto de Perfil do Usuário">
       <x-input class="col-md-7" type="file" name="photo" label="Foto de Perfil" feedback="true"/>
       <div class="col-md-3" style="margin-top: 40px;">
         <div class="form-group">

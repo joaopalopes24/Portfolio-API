@@ -28,9 +28,9 @@
         </div>
         <div class="col-5 text-center">
           @php
-            $patient->photo ? $photo = $patient->photo : $photo = "userX.png";
+            $patient->photo ? $url = "storage/patient/$patient->photo" : $url = "plugins/images/userX.png";
           @endphp
-          <img src="{{asset("storage/patient/$photo")}}" alt="Foto de Perfil do Usuário" class="img-circle img-fluid">
+          <img src="{{asset($url)}}" alt="Foto de Perfil do Usuário" class="img-circle img-fluid">
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@
   @csrf
   <div class="callout callout-info">
     <div class="row">
-      <img class="profile-user-img img-fluid img-circle" src="{{asset("storage/patient/userX.png")}}" alt="Foto de Perfil do Usuário">
+      <img class="profile-user-img img-fluid img-circle" src="{{asset("plugins/images/userX.png")}}" alt="Foto de Perfil do Usuário">
       <x-input class="col-md-9" type="file" name="photo" label="Foto de Perfil" feedback="true"/>
     </div>
   </div>
