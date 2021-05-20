@@ -17,7 +17,7 @@
       <div class="col-md-3" style="margin-top: 40px;">
         <div class="form-group">
           <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="not_photo" name="not_photo">
+            <input class="custom-control-input" type="checkbox" id="not_photo" name="not_photo" onclick="notPhoto()">
             <label for="not_photo" class="custom-control-label">Sem Foto</label>
           </div>
         </div>
@@ -52,3 +52,17 @@
 </form>
 <!-- End Content -->
 @endsection
+
+@push('scripts')
+<script>
+  function notPhoto() {
+    var not_photo = document.getElementsByName('not_photo')
+    var photo = document.getElementById('photo')
+    if (not_photo.item(0).checked == true) {
+      photo.disabled = true
+    } else {
+      photo.disabled = false
+    }
+  }
+</script>
+@endpush
