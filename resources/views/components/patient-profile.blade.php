@@ -27,7 +27,10 @@
           </p>
         </div>
         <div class="col-5 text-center">
-          <img src="https://adminlte.io/themes/v3/dist/img/user1-128x128.jpg" alt="user-avatar" class="img-circle img-fluid">
+          @php
+            $patient->photo ? $url = "storage/patient/$patient->photo" : $url = "plugins/images/userX.png";
+          @endphp
+          <img src="{{asset($url)}}" alt="Foto de Perfil do Usuário" class="img-circle img-fluid">
         </div>
       </div>
     </div>

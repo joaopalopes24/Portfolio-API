@@ -15,6 +15,8 @@ class PatientRequest extends FormRequest
     public function rules()
     {
         return [
+            'photo'       => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
+            'not_photo'   => 'nullable',
             'full_name'   => 'required|string',
             'mother_name' => 'required|string',
             'birthday'    => 'required|date',
@@ -33,6 +35,8 @@ class PatientRequest extends FormRequest
     public function attributes()
     {
         return [
+            'photo'       => 'Foto de Perfil',
+            'not_photo'   => 'Sem Foto',
             'full_name'   => 'Nome do Paciente',
             'mother_name' => 'Nome da Mãe',
             'birthday'    => 'Data de Nascimento',

@@ -4,10 +4,27 @@
 @section('caption', 'Edit')
 @section('content')
 <!-- Home Content -->
-<div class="card card-secondary card-outline">
-  <form class="needs-validation" action="{{route('admin.patient.update',$patient->id)}}" method="post" novalidate>
-    @method('put')
-    @csrf
+<form class="needs-validation" action="{{route('admin.patient.update',$patient->id)}}" method="post" enctype="multipart/form-data" novalidate>
+  @method('put')
+  @csrf
+  <div class="callout callout-info">
+    <div class="row">
+      @php
+        $patient->photo ? $url = "storage/patient/$patient->photo" : $url = "plugins/images/userX.png";
+      @endphp
+      <img class="profile-user-img img-fluid img-circle" src="{{asset($url)}}" alt="Foto de Perfil do Usuário">
+      <x-input class="col-md-7" type="file" name="photo" label="Foto de Perfil" feedback="true"/>
+      <div class="col-md-3" style="margin-top: 40px;">
+        <div class="form-group">
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox" id="not_photo" name="not_photo" onclick="notPhoto()">
+            <label for="not_photo" class="custom-control-label">Sem Foto</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card card-secondary card-outline">
     <div class="card-body">
       <div class="row">
         <x-input class="col-md-5" name="full_name" label="Nome do Paciente" value="{{$patient->full_name}}" feedback="true" required/>
@@ -31,7 +48,21 @@
       </div>
     </div>
     <x-footer-edit-create route="admin.patient.index"/>
-  </form>
-</div>
+  </div>
+</form>
 <!-- End Content -->
 @endsection
+
+@push('scripts')
+<script>
+  function notPhoto() {
+    var not_photo = document.getElementsByName('not_photo')
+    var photo = document.getElementById('photo')
+    if (not_photo.item(0).checked == true) {
+      photo.disabled = true
+    } else {
+      photo.disabled = false
+    }
+  }
+</script>
+@endpush

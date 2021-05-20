@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PatientRequest;
 use App\Models\Patient;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PatientController extends Controller
 {
@@ -37,6 +37,8 @@ class PatientController extends Controller
     {
         $values = $request->validated();
 
+        $values = $this->createImage($values,NULL);
+
         Patient::create($values);
 
         return redirect()->route('admin.patient.index')->withErrors(['success' => trans('auth.store',['name' => $this->values['name']])]);
@@ -60,6 +62,12 @@ class PatientController extends Controller
     {
         $values = $request->validated();
 
+        if(array_key_exists('not_photo',$values)){
+            $values = $this->deleteImage($values,$patient->photo);
+        } else {
+            $values = $this->createImage($values,$patient);
+        }
+
         $patient->fill($values)->save();
 
         return redirect()->route('admin.patient.index')->withErrors(['success' => trans('auth.update',['name' => $this->values['name']])]);
@@ -67,8 +75,41 @@ class PatientController extends Controller
 
     public function destroy(Patient $patient)
     {
+        $this->deleteImage($values = [],$patient->photo);
+        
         $patient->delete();
 
         return redirect()->route('admin.patient.index')->withErrors(['success' => trans('auth.destroy',['name' => $this->values['name']])]);
+    }
+
+    protected function createImage($values,$patient)
+    {
+        if(array_key_exists('photo',$values)){
+            $photo = $values['photo'];
+            $name = uniqid(date('HisYmd'));
+            $extension = $photo->getClientOriginalExtension();
+            $nameFile = "$name.$extension";
+
+            if($patient !== NULL){
+                if($patient->photo !== NULL){
+                    $values = $this->deleteImage($values,$patient->photo);
+                }
+            }
+            
+            $values['photo'] = $nameFile;
+            Storage::putFileAs('patient', $photo, "$nameFile");
+
+            return $values;
+        }
+
+        return $values;
+    }
+
+    protected function deleteImage($values,$photo)
+    {
+        Storage::delete("patient/$photo");
+        $values['photo'] = NULL;
+
+        return $values;
     }
 }
