@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PatientRequest;
 use App\Models\Patient;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class PatientController extends Controller
@@ -21,9 +22,11 @@ class PatientController extends Controller
         $this->middleware('permission:deletar-pacientes')->only('destroy');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $this->values['patients'] = Patient::paginate(12);
+        $this->values['request'] = $request;
+        
+        $this->values['patients'] = Patient::readPatients($request->full_name,$request->mother_name,$request->cpf,$request->cns)->paginate(12)->withQueryString();
 
         return view('admin.patient.index', $this->values);
     }

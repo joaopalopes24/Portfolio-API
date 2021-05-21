@@ -1,62 +1,90 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Desafio para Vaga de Desenvolvedor FullStack OM30
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este sistema foi criado com o intuito de atender o desafio proposto pela empresa OM30, visando mostrar meus conhecimentos técnicos sobre desenvolvimento FullStack em PHP. Trabalhei com o Laravel 8 neste projeto, usando alguns pacotes para complementá-lo.
 
-## About Laravel
+- [Spatie Permission](https://github.com/spatie/laravel-permission).
+- [Activity Log](https://github.com/spatie/laravel-activitylog).
+- [Laravel UI](https://github.com/laravel/ui).
+- [Faker PHP](https://github.com/FakerPHP/Faker).
+- [Validator Docs](https://github.com/geekcom/validator-docs).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Para o front-end, estamos baseando a maior parte do projeto no modelo AdminLTE 3, que pode ser encontrado em [Template](https://adminlte.io/themes/v3/index.html).
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- [AdminLTE 3](https://github.com/ColorlibHQ/AdminLTE).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Sobre este projeto
 
-## Learning Laravel
+- Data Inicial: 18/05/2021
+- Desenvolvedor: João Pedro Lopes
+- Status: `Finalizado`
+- Data de Conclusão: 21/05/2021
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Requisitos
+- PHP >= 7.3
+- Laravel = 8
+- Composer v1.10.3
+- Mysql v7.4.11
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Como instalar
+- Clone o projeto
+    ```bash
+        git clone https://gitlab.com/joaopalopes24/challenge-om30.git
+    ```
+- Copie o arquivo .env.example
+    - Se estiver utilizando linux: cp .env.example .env
+    - Se estiver no windows abra o arquivo em um editor de código e o salve novamente como .env
+- Crie uma nova chave para a aplicação
+    ```bash
+        php artisan key:generate
+    ```
+- Atualize as configuração do banco de dados
+    - .env
+     ```php
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=challenge-om30
+        DB_USERNAME=root
+        DB_PASSWORD=
+    ``` 
+    Ou
+    - config > database.php 
+    ```php
+        'database' => env('DB_DATABASE', 'database'),
+        'username' => env('DB_USERNAME', 'username'),
+        'password' => env('DB_PASSWORD', 'senha'),
+    ```            
+- Rode as Migrations com os Seeder
+    ```bash
+        php artisan migrate --seed
+    ```
 
-## Laravel Sponsors
+- Rode o comando para criar o link simbólico de arquivos:
+    ```bash
+        php artisan storage:link
+    ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## OBS
+- Ao colocar em produção, retirar o readme.md e os arquivos de referencia para não subir para o sistema em produção
 
-### Premium Partners
+## Possíveis Issues
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+### 1. Erro ao recuperar a senha.
 
-## Contributing
+Este problema ocorre devido ao fato do google sempre desativar o acesso a apps inseguros. Para corrigir isso segue o passo a passo: 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Entre no arquivo `config > mail.php`
+- Pegue a senha e o e-mail nos indices `username` e `password`;
+    ```php
 
-## Code of Conduct
+        'username' => env('MAIL_USERNAME', 'email_aqui'),
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+        'password' => env('MAIL_PASSWORD', 'senha_aqui'),
 
-## Security Vulnerabilities
+    ```
+- Faça login na conta do google do e-mail de redefinição de senha.
+- Vá em **Gerenciar sua Conta do Google**
+- Clique na aba **Segurança**
+- Depois ative o **Acesso a app menos seguro**.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**Pronto, problema resolvido!**
