@@ -38,14 +38,14 @@ Para o front-end, estamos baseando a maior parte do projeto no modelo AdminLTE 3
     ```bash
         php artisan key:generate
     ```
-- Primeiro crie o Banco de Dados e depois atualize as configuração do banco de dados
+- Primeiro crie o Banco de Dados e depois atualize as configuração do banco de dados (as configurações já estão iguais a mostrada a seguir)
     - .env
      ```php
-        DB_CONNECTION=mysql
+        DB_CONNECTION=pgsql
         DB_HOST=127.0.0.1
-        DB_PORT=3306
-        DB_DATABASE=challenge-om30
-        DB_USERNAME=root
+        DB_PORT=5432
+        DB_DATABASE=challenge_om30
+        DB_USERNAME=forge
         DB_PASSWORD=
     ``` 
 
