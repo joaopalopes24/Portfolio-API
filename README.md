@@ -45,6 +45,7 @@ Para o front-end, estamos baseando a maior parte do projeto no modelo AdminLTE 3
     - Se estiver utilizando linux: `cp .env.example .env` 
     - Se estiver no windows abra o arquivo em um editor de código e o salve novamente como `.env`
     
+    
 - Crie uma nova chave para a aplicação
     ```bash
         php artisan key:generate
