@@ -31,13 +31,14 @@ Para o front-end, estamos baseando a maior parte do projeto no modelo AdminLTE 3
         git clone https://gitlab.com/joaopalopes24/challenge-om30.git
     ```
 - Copie o arquivo .env.example
-    - Se estiver utilizando linux: cp .env.example .env
-    - Se estiver no windows abra o arquivo em um editor de código e o salve novamente como .env
+    - Se estiver utilizando linux: `cp .env.example .env` 
+    - Se estiver no windows abra o arquivo em um editor de código e o salve novamente como `.env`
+    
 - Crie uma nova chave para a aplicação
     ```bash
         php artisan key:generate
     ```
-- Atualize as configuração do banco de dados
+- Primeiro crie o Banco de Dados e depois atualize as configuração do banco de dados
     - .env
      ```php
         DB_CONNECTION=mysql
@@ -47,14 +48,8 @@ Para o front-end, estamos baseando a maior parte do projeto no modelo AdminLTE 3
         DB_USERNAME=root
         DB_PASSWORD=
     ``` 
-    Ou
-    - config > database.php 
-    ```php
-        'database' => env('DB_DATABASE', 'database'),
-        'username' => env('DB_USERNAME', 'username'),
-        'password' => env('DB_PASSWORD', 'senha'),
-    ```            
-- Rode as Migrations com os Seeder
+
+- Rode as Migrations com os Seeders
     ```bash
         php artisan migrate --seed
     ```
@@ -76,7 +71,6 @@ Este problema ocorre devido ao fato do google sempre desativar o acesso a apps i
 - Entre no arquivo `config > mail.php`
 - Pegue a senha e o e-mail nos indices `username` e `password`;
     ```php
-
         'username' => env('MAIL_USERNAME', 'email_aqui'),
 
         'password' => env('MAIL_PASSWORD', 'senha_aqui'),
