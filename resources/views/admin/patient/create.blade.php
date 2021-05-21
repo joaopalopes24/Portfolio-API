@@ -9,7 +9,8 @@
   <div class="callout callout-info">
     <div class="row">
       <img class="profile-user-img img-fluid img-circle" src="{{asset("plugins/images/userX.png")}}" alt="Foto de Perfil do Usuário">
-      <x-input class="col-md-9" type="file" name="photo" label="Foto de Perfil" feedback="true"/>
+      <x-input-file class="col-md-5" name="photo" label="Foto de Perfil (preferencialmente fotos quadradas)" feedback="true"/>
+      <div class="col-md-1 offset-md-4"></div>
     </div>
   </div>
   <div class="card card-secondary card-outline">

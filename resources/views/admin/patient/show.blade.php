@@ -7,9 +7,9 @@
 <div class="callout callout-info">
   <div class="row">
     @php
-      $patient->photo ? $url = "storage/patient/$patient->photo" : $url = "plugins/images/userX.png";
+      $patient->photo ? $url = "storage/$patient->photo" : $url = "plugins/images/userX.png";
     @endphp
-    <img class="profile-user-img img-fluid img-circle" src="{{asset($url)}}" alt="Foto de Perfil do Usuário">
+    <img class="profile-user-img img-fluid img-circle" src="{{asset($url)}}" alt="Foto de Perfil do Usuário" style="width: 200px;">
   </div>
 </div>
 <div class="card card-secondary card-outline">
