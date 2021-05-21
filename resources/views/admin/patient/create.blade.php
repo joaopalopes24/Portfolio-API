@@ -23,7 +23,7 @@
       <div class="row">
         <x-input class="col-md-4" label="CPF" placeholder="SOMENTE NÚMEROS" data-mask="000.000.000-00" feedback="true" required/>
         <x-input class="col-md-4" label="CNS" placeholder="SOMENTE NÚMEROS" data-mask="000000000000000" feedback="true" required/>
-        <x-input class="col-md-4" label="CEP" placeholder="SOMENTE NÚMEROS" data-mask="00000000" feedback="true" required/>
+        <x-input class="col-md-4" label="CEP" placeholder="SOMENTE NÚMEROS" data-mask="00000.000" onblur="pesquisacep(this.value);" feedback="true" required/>
       </div>
       <div class="row">
         <x-input class="col-md-5" name="adress" label="Rua / Avenida" feedback="true" required/>
@@ -41,3 +41,8 @@
 </form>
 <!-- End Content -->
 @endsection
+
+@push('scripts')
+{{-- Esse Script com integração do ViaCEP foi pegado na própria documentação do ViaCEP com pequenas alterações --}}
+<script src="{{asset('plugins/dist/js/viacep.js')}}"></script>
+@endpush

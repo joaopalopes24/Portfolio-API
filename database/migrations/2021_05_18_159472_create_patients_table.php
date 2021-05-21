@@ -21,7 +21,7 @@ class CreatePatientsTable extends Migration
             $table->date('birthday');
             $table->string('cpf',14)->unique();
             $table->string('cns',15)->unique();
-            $table->string('cep',8);
+            $table->string('cep',9);
             $table->string('adress',50);
             $table->unsignedInteger('number');
             $table->string('complement',30)->nullable();
