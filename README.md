@@ -30,6 +30,17 @@ Para o front-end, estamos baseando a maior parte do projeto no modelo AdminLTE 3
     ```bash
         git clone https://gitlab.com/joaopalopes24/challenge-om30.git
     ```
+
+- Mude para a pasta do repositório
+    ```bash
+        cd challenge-om30
+    ```
+
+- Instale as dependências usando o `composer`
+    ```bash
+        composer install
+    ```
+
 - Copie o arquivo .env.example
     - Se estiver utilizando linux: `cp .env.example .env` 
     - Se estiver no windows abra o arquivo em um editor de código e o salve novamente como `.env`
@@ -58,6 +69,13 @@ Para o front-end, estamos baseando a maior parte do projeto no modelo AdminLTE 3
     ```bash
         php artisan storage:link
     ```
+
+- Rode o sistema usando o comando:
+    ```bash
+        php artisan serve
+    ```
+
+- Acesse a aplicação pela URL [Challenge-OM30](http://127.0.0.1:8000).
 
 ## OBS
 - Ao colocar em produção, retirar o readme.md e os arquivos de referencia para não subir para o sistema em produção
