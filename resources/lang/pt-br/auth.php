@@ -26,7 +26,7 @@ return [
     'store'      => ':name cadastrado com sucesso!',
     'update'     => ':name atualizado com sucesso!',
     'destroy'    => ':name deletado com sucesso!',
-    'permission' => 'Permissões do perfil :name alteradas com sucesso.',
-    'permissionUser' => 'Permissões do usuário :name alteradas com sucesso.',
+    'permission' => 'Permissões do perfil (:name) alteradas com sucesso.',
+    'permissionUser' => 'Permissões do usuário (:name) alteradas com sucesso.',
 
 ];

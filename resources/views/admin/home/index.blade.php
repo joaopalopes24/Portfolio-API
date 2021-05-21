@@ -59,7 +59,7 @@
               visando mostrar meus conhecimentos técnicos sobre desenvolvimento FullStack em PHP. O
               painel administrativo conta um sistema para gerenciar permissões dos usuários, além de
               monitoramento do sistema mostrando todos os logs. Caso queiram testar o sistema, podem
-              utilizar o email “administrator@example.com” e a senha “12345678”.
+              utilizar o email “administrador@exemplo.com” e a senha “12345678”.
             </p>
           </div>
         </div>
