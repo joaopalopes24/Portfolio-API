@@ -78,6 +78,10 @@ Para o front-end, estamos baseando a maior parte do projeto no modelo AdminLTE 3
 
 - Acesse a aplicação pela URL [Challenge-OM30](http://127.0.0.1:8000).
 
+### Dados para Login
+- Usuário: `administrador@exemplo.com`.
+- Senha: `12345678` .
+
 ## OBS
 - Ao colocar em produção, retirar o readme.md e os arquivos de referencia para não subir para o sistema em produção
 
