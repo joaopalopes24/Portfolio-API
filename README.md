@@ -15,7 +15,7 @@ Para o front-end, estamos baseando a maior parte do projeto no modelo AdminLTE 3
 ## Sobre este projeto
 
 - Desenvolvedor: João Pedro Lopes
-- Status: `Finalizado`
+- Status: `Em desenvolvimento`
 
 ### Requisitos
 - PHP >= 7.3
@@ -26,12 +26,12 @@ Para o front-end, estamos baseando a maior parte do projeto no modelo AdminLTE 3
 ### Como instalar
 - Clone o projeto
     ```bash
-        git clone https://gitlab.com/joaopalopes24/challenge-api.git
+        git clone https://github.com/joaopalopes24/portfolio-api.git
     ```
 
 - Mude para a pasta do repositório
     ```bash
-        cd challenge-api
+        cd portfolio-api
     ```
 
 - Instale as dependências usando o `composer`
@@ -54,8 +54,8 @@ Para o front-end, estamos baseando a maior parte do projeto no modelo AdminLTE 3
         DB_CONNECTION=pgsql
         DB_HOST=127.0.0.1
         DB_PORT=5432
-        DB_DATABASE=challenge
-        DB_USERNAME=challenge
+        DB_DATABASE=portfolio
+        DB_USERNAME=portfolio
         DB_PASSWORD=123456
     ``` 
 
@@ -74,7 +74,7 @@ Para o front-end, estamos baseando a maior parte do projeto no modelo AdminLTE 3
         php artisan serve
     ```
 
-- Acesse a aplicação pela URL [Challenge-API](http://127.0.0.1:8000).
+- Acesse a aplicação pela URL [Portfolio-API](http://127.0.0.1:8000).
 
 ### Dados para Login
 - Usuário: `administrador@exemplo.com`.
