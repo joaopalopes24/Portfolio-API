@@ -1,8 +1,8 @@
 @props(['name','label','value'])
 
 @php
-  $name = $name ?? Str::slug($label);
-  $value = $value ?? '';
+$name = $name ?? Str::slug($label);
+$value = $value ?? '';
 @endphp
 
 <div {{$attributes->merge(['class' => 'form-group'])}}>

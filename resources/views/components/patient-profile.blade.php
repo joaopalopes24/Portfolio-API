@@ -21,14 +21,14 @@
             <b>Endereço: </b> {{$patient->adress}} {{$patient->number}} {{$patient->complement}} - {{$patient->district}}, {{$patient->city}} - {{$patient->state_abbr}}
             <br>
             @php
-              $birthday = new DateTime($patient->birthday);
+            $birthday = new DateTime($patient->birthday);
             @endphp
             <b>Data de Nascimento: </b> {{$birthday->format('d/m/Y')}}
           </p>
         </div>
         <div class="col-5 text-center">
           @php
-            $patient->photo ? $url = "storage/$patient->photo" : $url = "plugins/images/userX.png";
+          $patient->photo ? $url = "storage/$patient->photo" : $url = "plugins/images/userX.png";
           @endphp
           <img src="{{asset($url)}}" alt="Foto de Perfil do Usuário" class="img-circle img-fluid">
         </div>
@@ -40,17 +40,17 @@
           <i class="far fa-eye"></i>
         </a>
         @can('editar-pacientes')
-          <a href="{{route('admin.patient.edit',$patient->id)}}" class="btn btn-sm bg-primary">
-            <i class="fas fa-pencil-alt"></i>
-          </a>
+        <a href="{{route('admin.patient.edit',$patient->id)}}" class="btn btn-sm bg-primary">
+          <i class="fas fa-pencil-alt"></i>
+        </a>
         @endcan
         @can('deletar-pacientes')
-          <a href="#" class="btn btn-sm bg-danger" data-toggle="modal" data-target="#modal-default{{$patient->id}}">
-            <i class="fas fa-trash-alt"></i>
-          </a>
+        <a href="#" class="btn btn-sm bg-danger" data-toggle="modal" data-target="#modal-default{{$patient->id}}">
+          <i class="fas fa-trash-alt"></i>
+        </a>
         @endcan
       </div>
-      <x-modal-delete id="{{$patient->id}}" route="admin.patient.destroy" name="{{$name}}" parameter1="{{$patient->id}}"/>
+      <x-modal-delete id="{{$patient->id}}" route="admin.patient.destroy" name="{{$name}}" parameter1="{{$patient->id}}" />
     </div>
   </div>
 </div>

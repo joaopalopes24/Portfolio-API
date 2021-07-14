@@ -10,16 +10,14 @@
     @csrf
     <div class="card-body">
       <div class="row">
-        <x-input class="col-xl-4 col-md-6" name="full_name" label="Nome da Permissão" value="{{$permission->full_name}}" feedback="true" required/>
+        <x-input class="col-md-6" name="full_name" label="Nome da Permissão" value="{{$permission->full_name}}" feedback="true" required />
+        <x-input class="col-md-6" name="name" label="Slug" value="{{$permission->name}}" disabled />
       </div>
       <div class="row">
-        <x-input class="col-xl-4 col-md-6" name="name" label="Slug" value="{{$permission->name}}" disabled/>
-      </div>
-      <div class="row">
-        <x-input class="col-xl-4 col-md-6" name="description" label="Descrição" value="{{$permission->description}}" feedback="true" required/>
+        <x-input class="col-12" name="description" label="Descrição" value="{{$permission->description}}" feedback="true" required />
       </div>
     </div>
-    <x-footer-edit-create route="admin.permission.index"/>
+    <x-footer-edit-create route="admin.permission.index" />
   </form>
 </div>
 <!-- End Content -->

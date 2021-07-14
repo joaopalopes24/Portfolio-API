@@ -1,7 +1,7 @@
 @props(['id','name','route','parameter1','parameter2'])
 
 @php
-  $parameter2 = $parameter2 ?? NULL;
+$parameter2 = $parameter2 ?? NULL;
 @endphp
 
 <div class="modal fade" id="modal-default{{$id}}" style="display: none;" aria-hidden="true">

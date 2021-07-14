@@ -1,8 +1,8 @@
 @props(['route','name1','name2'])
 
 @php
-  $name1 = $name1 ?? 'Anterior';
-  $name2 = $name2 ?? 'Salvar';
+$name1 = $name1 ?? 'Anterior';
+$name2 = $name2 ?? 'Salvar';
 @endphp
 
 <div class="card-footer" {!!$attributes->merge()!!}>

@@ -159,7 +159,7 @@
       <div class="col-md-5">
         <img src="{{asset('plugins/images/block(03).jpeg')}}" class="d-block w-100">
       </div>
-    </div>  
+    </div>
   </div>
 </div>
 <!-- End Content -->

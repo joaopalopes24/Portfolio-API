@@ -9,10 +9,8 @@
     @csrf
     <div class="card-body">
       <div class="row">
-        <x-input class="col-xl-4 col-md-6" name="full_name" label="Nome da Permissão" feedback="true" required/>
-      </div>
-      <div class="row">
-        <x-input class="col-xl-4 col-md-6" name="description" label="Descrição" feedback="true" required/>
+        <x-input class="col-md-6" name="full_name" label="Nome da Permissão" feedback="true" value="{{old('full_name')}}" required/>
+        <x-input class="col-md-6" name="description" label="Descrição" feedback="true" value="{{old('description')}}" required/>
       </div>
     </div>
     <x-footer-edit-create route="admin.permission.index"/>

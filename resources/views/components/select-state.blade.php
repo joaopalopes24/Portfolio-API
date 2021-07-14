@@ -1,7 +1,7 @@
 @props(['name','label','value','feedback'=>NULL])
 
 @php
-  $value = $value ?? '';
+$value = $value ?? '';
 @endphp
 
 <div {{$attributes->merge(['class' => 'form-group mb-3'])}}>
@@ -37,11 +37,11 @@
     <option value="TO" {{ $value === 'TO' ? 'selected' : '' }}>Tocantins</option>
   </select>
   @isset($feedback)
-    <div class="invalid-feedback">
-      Campo Obrigatório!
-    </div>
-    <div class="valid-feedback">
-     OK!
-    </div>
+  <div class="invalid-feedback">
+    Campo Obrigatório!
+  </div>
+  <div class="valid-feedback">
+    OK!
+  </div>
   @endisset
 </div>

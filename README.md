@@ -1,6 +1,6 @@
-# Desafio para Vaga de Desenvolvedor FullStack OM30
+# Portfólio para Vaga de Desenvolvedor FullStack
 
-Este sistema foi criado com o intuito de atender o desafio proposto pela empresa OM30, visando mostrar meus conhecimentos técnicos sobre desenvolvimento FullStack em PHP. Trabalhei com o Laravel 8 neste projeto, usando alguns pacotes para complementá-lo.
+Este sistema foi criado com o intuito de mostrar meus conhecimentos técnicos sobre desenvolvimento FullStack em PHP e estruturas de programação Web. Trabalhei com o Laravel 8 neste projeto, usando alguns pacotes para complementá-lo.
 
 - [Spatie Permission](https://github.com/spatie/laravel-permission).
 - [Activity Log](https://github.com/spatie/laravel-activitylog).
@@ -14,10 +14,8 @@ Para o front-end, estamos baseando a maior parte do projeto no modelo AdminLTE 3
 
 ## Sobre este projeto
 
-- Data Inicial: 18/05/2021
 - Desenvolvedor: João Pedro Lopes
 - Status: `Finalizado`
-- Data de Conclusão: 21/05/2021
 
 ### Requisitos
 - PHP >= 7.3
@@ -28,12 +26,12 @@ Para o front-end, estamos baseando a maior parte do projeto no modelo AdminLTE 3
 ### Como instalar
 - Clone o projeto
     ```bash
-        git clone https://gitlab.com/joaopalopes24/challenge-om30.git
+        git clone https://gitlab.com/joaopalopes24/challenge-api.git
     ```
 
 - Mude para a pasta do repositório
     ```bash
-        cd challenge-om30
+        cd challenge-api
     ```
 
 - Instale as dependências usando o `composer`
@@ -56,9 +54,9 @@ Para o front-end, estamos baseando a maior parte do projeto no modelo AdminLTE 3
         DB_CONNECTION=pgsql
         DB_HOST=127.0.0.1
         DB_PORT=5432
-        DB_DATABASE=challenge_om30
-        DB_USERNAME=forge
-        DB_PASSWORD=
+        DB_DATABASE=challenge
+        DB_USERNAME=challenge
+        DB_PASSWORD=123456
     ``` 
 
 - Rode as Migrations com os Seeders
@@ -76,7 +74,7 @@ Para o front-end, estamos baseando a maior parte do projeto no modelo AdminLTE 3
         php artisan serve
     ```
 
-- Acesse a aplicação pela URL [Challenge-OM30](http://127.0.0.1:8000).
+- Acesse a aplicação pela URL [Challenge-API](http://127.0.0.1:8000).
 
 ### Dados para Login
 - Usuário: `administrador@exemplo.com`.

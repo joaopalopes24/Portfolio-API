@@ -10,13 +10,11 @@
     <div class="card-body">
       <div class="row">
         @foreach($permissions as $permission)
-          <x-checkbox-permission id="{{$permission->name}}" name="permissions[]" value="{{$permission->id}}"
-            label="{{$permission->full_name}}" parameter="{{$role->hasPermissionTo($permission->id)}}"/>
-          <br>
+        <x-checkbox-permission id="{{$permission->name}}" name="permissions[]" value="{{$permission->id}}" label="{{$permission->full_name}}" parameter="{{$role->hasPermissionTo($permission->id)}}" />
         @endforeach
       </div>
     </div>
-    <x-footer-edit-create route="admin.role.index"/>
+    <x-footer-edit-create route="admin.role.index" />
   </form>
 </div>
 <!-- End Content -->
