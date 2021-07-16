@@ -37,7 +37,7 @@ return [
      * get more info @ https://developers.google.com/recaptcha/docs/versions
      *
      */
-    'version'                      => 'v3',
+    'version'                      => 'v2',
 
     /**
      *
@@ -78,7 +78,7 @@ return [
      * @since v3.6.0
      *
      */
-    'default_language'             => null,
+    'default_language'             => 'pt-BR',
 
     /**
      *

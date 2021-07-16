@@ -17,7 +17,7 @@ class AdminRequest extends FormRequest
         return [
             'full_name' => 'required|string',
             'email'     => ['required','email', Rule::unique('admins')->ignore($this->admin)],
-            'cpf'       => ['required','formato_cpf','cpf', Rule::unique('admins')->ignore($this->admin)],
+            'cpf'       => ['required','cpf', Rule::unique('admins')->ignore($this->admin)],
             'birthday'  => 'required|date',
             'roles'     => 'required|exists:roles,name',
         ];

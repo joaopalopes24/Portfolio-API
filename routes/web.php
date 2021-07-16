@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\PatientController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\RoleHasPermissionController;
+use App\Http\Controllers\Auth\SocialiteController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,11 +25,17 @@ use Illuminate\Support\Facades\Route;
 /* ---------- ADMINISTRADOR ---------- */
 /* Rotas de Login do Administrador */
 Auth::routes([
-    'register' => false,
     'confirm' => false,
     'verification' => false
 ]);
-/* Essa rotas serão redirecionadas para a HOME caso ele esteja logado */
+
+/* Rotas Socialite - Essa rotas serão redirecionadas para a HOME caso ele esteja logado */
+Route::middleware('guest')->prefix('login')->group(function () {
+    Route::get('/{plataform}/redirect', [SocialiteController::class, 'redirectToProvider'])->name('oauth');
+    Route::get('/{plataform}/callback', [SocialiteController::class, 'handleProviderCallback'])->name('oauth.callback');
+});
+
+/* Essa rotas serão redirecionadas para o LOGIN caso ele não esteja logado */
 Route::middleware('auth')->name('admin.')->group(function () {
     Route::name('home.')->group(function () {
         Route::get('/', [HomeAdminController::class, 'index'])->name('index');

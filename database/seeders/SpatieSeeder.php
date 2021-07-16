@@ -20,6 +20,11 @@ class SpatieSeeder extends Seeder
             'guard_name' => 'web',
         ]);
 
+        DB::table('roles')->insert([
+            'name'       => 'Visitante',
+            'guard_name' => 'web',
+        ]);
+
         DB::table('model_has_roles')->insert([
             'role_id'    => '1',
             'model_type' => 'App\Models\Admin',
@@ -179,5 +184,10 @@ class SpatieSeeder extends Seeder
                 'permission_id' => $i,
             ]);
         }
+
+        DB::table('role_has_permissions')->insert([
+            'role_id' => '2',
+            'permission_id' => 1,
+        ]);
     }
 }

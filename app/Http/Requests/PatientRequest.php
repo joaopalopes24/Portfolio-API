@@ -20,7 +20,7 @@ class PatientRequest extends FormRequest
             'full_name'   => 'required|string',
             'mother_name' => 'required|string',
             'birthday'    => 'required|date',
-            'cpf'         => ['required','formato_cpf','cpf', Rule::unique('patients')->ignore($this->patient)],
+            'cpf'         => ['required','cpf', Rule::unique('patients')->ignore($this->patient)],
             'cns'         => ['required','cns', Rule::unique('patients')->ignore($this->patient)],
             'cep'         => 'required|string|size:9|regex:/^[0-9]{5}[-][0-9]{3}/',
             'adress'      => 'required|max:50',

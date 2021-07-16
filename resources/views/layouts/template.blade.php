@@ -19,9 +19,9 @@
 
 <body class="hold-transition login-page">
   <div class="login-box">
-    <div class="login-logo mb-3">
+    {{-- <div class="login-logo mb-3">
       <a href="{{ route('login') }}"><img src="{{asset('plugins/images/logo.png')}}" width="360"></a>
-    </div>
+    </div> --}}
     <div class="card">
       @yield('content')
     </div>
