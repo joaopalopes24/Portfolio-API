@@ -1,4 +1,4 @@
-@props(['name','label','type','placeholder','value','feedback'=>NULL])
+@props(['name','label','type','placeholder','value'])
 
 @php
 $type = $type ?? 'text';
@@ -8,14 +8,9 @@ $value = $value ?? '';
 @endphp
 
 <div {{$attributes->merge(['class' => 'form-group'])}}>
-  <label for="{{$name}}">{{$label}}</label>
-  <input class="form-control" id="{{$name}}" type="{{$type}}" name="{{$name}}" placeholder="{{$placeholder}}" value="{{$value}}" {!!$attributes->merge()!!}>
-  @isset($feedback)
-  <div class="invalid-feedback">
-    Campo Obrigatório!
-  </div>
-  <div class="valid-feedback">
-    OK!
-  </div>
-  @endisset
+    <label for="{{$name}}">{{$label}}</label>
+    <input class="form-control @error($name) is-invalid @elseif(old($name)) is-valid @enderror" id="{{$name}}" type="{{$type}}" name="{{$name}}" placeholder="{{$placeholder}}" value="{{$value}}" {!!$attributes->merge()!!}>
+    <div class="invalid-feedback">
+        @error($name) {{ $message }} @else Campo Obrigatório! @enderror
+    </div>
 </div>

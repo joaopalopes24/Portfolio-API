@@ -15,16 +15,16 @@ class Admin extends Authenticatable
 {
     use HasRoles,HasFactory,Notifiable,LogsActivity;
 
-    protected $fillable = ['full_name','cpf','email','password', 'birthday'];
+    protected $fillable = ['full_name','cpf','email','password','birthday','provider','provider_id'];
 
     protected $hidden = ['password','remember_token'];
     
-    protected $casts = ['email_verified_at' => 'datetime',];
+    protected $casts = ['email_verified_at' => 'datetime'];
 
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
-        ->logOnly(['full_name','email','cpf','birthday'])
+        ->logOnly(['full_name','email','cpf','birthday','provider','provider_id'])
         ->useLogName('Administrador');
     }
 

@@ -7,11 +7,11 @@ $name = $name ?? 'Menu Teste';
 
 @can($permission)
 <li class="nav-item">
-  <a href="{{route($route)}}" class="nav-link{{ str_starts_with(Route::currentRouteName(),$active) ? ' active' : '' }}">
-    <i class="nav-icon {{$icon}}"></i>
-    <p>
-      {{$name}}
-    </p>
-  </a>
+    <a href="{{route($route)}}" class="nav-link{{ str_starts_with(Route::currentRouteName(),$active) ? ' active' : '' }}">
+        <i class="nav-icon {{$icon}}"></i>
+        <p>
+            {{$name}}
+        </p>
+    </a>
 </li>
 @endcan

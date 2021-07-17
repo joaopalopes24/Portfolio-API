@@ -7,8 +7,8 @@ $name2 = $name2 ?? 'Nome 02';
 @endphp
 
 <div class="row">
-  <button type="submit" class="btn btn-primary btn-block">{{$name1}}</button>
-  @isset($route)
-  <a href="{{ route($route) }}" type="button" class="btn btn-light btn-block">{{$name2}}</a>
-  @endisset
+    <button type="submit" class="btn btn-primary btn-block">{{$name1}}</button>
+    @isset($route)
+    <a href="{{ route($route) }}" type="button" class="btn btn-light btn-block">{{$name2}}</a>
+    @endisset
 </div>

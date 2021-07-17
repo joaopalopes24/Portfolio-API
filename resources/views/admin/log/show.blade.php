@@ -5,23 +5,23 @@
 @section('content')
 <!-- Home Content -->
 <div class="card card-secondary card-outline">
-  <div class="card-body">
-    <div class="row">
-      <x-input class="col-xl-4 col-md-6" label="ID" value="{{$log->id}}" disabled />
-      <x-input class="col-xl-4 col-md-6" name="log_name" label="Objeto" value="{{$log->log_name}}" disabled />
-      <x-input class="col-xl-4 col-md-6" name="description" label="Descrição" value="{{$log->description}}" disabled />
+    <div class="card-body">
+        <div class="row">
+            <x-input class="col-xl-4 col-md-6" label="ID" value="{{$log->id}}" disabled />
+            <x-input class="col-xl-4 col-md-6" name="log_name" label="Objeto" value="{{$log->log_name}}" disabled />
+            <x-input class="col-xl-4 col-md-6" name="description" label="Descrição" value="{{$log->description}}" disabled />
+        </div>
+        <div class="row">
+            <x-textarea class="col-sm-12" name="causer" label="Dados do Usuário responsável pelo Log" :value="$log->causer" disabled />
+        </div>
+        <div class="row">
+            <x-textarea class="col-sm-12" name="subject" label="Dados do Objeto atual" :value="$log->subject" disabled />
+        </div>
+        <div class="row">
+            <x-textarea class="col-sm-12" name="changes" label="Dados A/D do Objeto" :value="$log->changes" disabled />
+        </div>
     </div>
-    <div class="row">
-      <x-textarea class="col-sm-12" name="causer" label="Dados do Usuário responsável pelo Log" :value="$log->causer" disabled />
-    </div>
-    <div class="row">
-      <x-textarea class="col-sm-12" name="subject" label="Dados do Objeto atual" :value="$log->subject" disabled />
-    </div>
-    <div class="row">
-      <x-textarea class="col-sm-12" name="changes" label="Dados A/D do Objeto" :value="$log->changes" disabled />
-    </div>
-  </div>
-  <x-footer-show route="admin.log.index" />
+    <x-footer-show route="admin.log.index" />
 </div>
 <!-- End Content -->
 @endsection
@@ -30,6 +30,6 @@
 <!-- AutoSize -->
 <script src="{{asset('plugins/dist/js/autosize.min.js')}}"></script>
 <script>
-  autosize(document.querySelectorAll('#autosize'));
+    autosize(document.querySelectorAll('#autosize'));
 </script>
 @endpush

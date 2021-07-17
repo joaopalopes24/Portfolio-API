@@ -16,7 +16,7 @@ class PatientFactory extends Factory
             'mother_name' => $this->faker->name('female'),
             'birthday' => $this->faker->date(),
             'cpf' => $this->faker->cpf(),
-            'cns' => $this->faker->regexify('[0-9]{15}'),
+            'cns' => $this->faker->regexify('[0-9]{3}[ ][0-9]{4}[ ][0-9]{4}[ ][0-9]{4}'),
             'cep' => $this->faker->regexify('[0-9]{5}[-][0-9]{3}'),
             'adress' => $this->faker->streetName(),
             'number' => $this->faker->numberBetween(1, 1000),

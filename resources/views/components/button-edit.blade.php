@@ -6,6 +6,6 @@ $parameter2 = $parameter2 ?? NULL;
 
 @can($permission)
 <a href="{{$parameter2 ? route($route,[$parameter1,$parameter2]) : route($route,$parameter1)}}" type="button" class="btn btn-primary">
-  <i class="fas fa-pencil-alt"></i>
+    <i class="fas fa-pencil-alt"></i>
 </a>
 @endcan

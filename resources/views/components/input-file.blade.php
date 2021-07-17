@@ -1,4 +1,4 @@
-@props(['name','label','feedback'=>NULL])
+@props(['name','label'])
 
 @php
 $type = $type ?? 'text';
@@ -8,14 +8,9 @@ $value = $value ?? '';
 @endphp
 
 <div {{$attributes->merge(['class' => 'form-group'])}}>
-  <label for="{{$name}}">{{$label}}</label>
-  <input class="form-control-file" id="{{$name}}" type="file" name="{{$name}}" {!!$attributes->merge()!!}>
-  @isset($feedback)
-  <div class="invalid-feedback">
-    Campo Obrigatório!
-  </div>
-  <div class="valid-feedback">
-    OK!
-  </div>
-  @endisset
+    <label for="{{$name}}">{{$label}}</label>
+    <input class="form-control-file @error($name) is-invalid @elseif(old($name)) is-valid @enderror" id="{{$name}}" type="file" name="{{$name}}" {!!$attributes->merge()!!}>
+    <div class="invalid-feedback">
+        @error($name) {{ $message }} @else Campo Obrigatório! @enderror
+    </div>
 </div>

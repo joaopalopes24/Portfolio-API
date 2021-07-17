@@ -31,8 +31,8 @@ Auth::routes([
 
 /* Rotas Socialite - Essa rotas serão redirecionadas para a HOME caso ele esteja logado */
 Route::middleware('guest')->prefix('login')->group(function () {
-    Route::get('/{plataform}/redirect', [SocialiteController::class, 'redirectToProvider'])->name('oauth');
-    Route::get('/{plataform}/callback', [SocialiteController::class, 'handleProviderCallback'])->name('oauth.callback');
+    Route::get('/{provider}/redirect', [SocialiteController::class, 'redirectToProvider'])->name('oauth');
+    Route::get('/{provider}/callback', [SocialiteController::class, 'handleProviderCallback'])->name('oauth.callback');
 });
 
 /* Essa rotas serão redirecionadas para o LOGIN caso ele não esteja logado */

@@ -1,4 +1,4 @@
-@props(['icon','name','type','placeholder','value','feedback'=>NULL])
+@props(['icon','name','type','placeholder','value'])
 
 @php
 $type = $type ?? 'text';
@@ -7,18 +7,13 @@ $value = $value ?? '';
 @endphp
 
 <div class="input-group mb-3">
-  <div class="input-group-append">
-    <div class="input-group-text">
-      <span class="{{$icon}}"></span>
+    <div class="input-group-append">
+        <div class="input-group-text">
+            <span class="{{$icon}}"></span>
+        </div>
     </div>
-  </div>
-  <input class="form-control" id="{{$name}}" type="{{$type}}" name="{{$name}}" placeholder="{{$placeholder}}" value="{{$value}}" {!!$attributes->merge()!!}>
-  @isset($feedback)
-  <div class="invalid-feedback">
-    Campo Obrigatório!
-  </div>
-  <div class="valid-feedback">
-    OK!
-  </div>
-  @endisset
+    <input class="form-control @error($name) is-invalid @elseif(old($name)) is-valid @enderror" id="{{$name}}" type="{{$type}}" name="{{$name}}" placeholder="{{$placeholder}}" value="{{$value}}" {!!$attributes->merge()!!}>
+    <div class="invalid-feedback">
+        @error($name) {{ $message }} @else Campo Obrigatório! @enderror
+    </div>
 </div>

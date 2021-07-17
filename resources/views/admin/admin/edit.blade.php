@@ -10,12 +10,12 @@
     @csrf
     <div class="card-body">
       <div class="row">
-        <x-input class="col-md-6" name="full_name" label="Nome Completo" value="{{$admin->full_name}}" feedback="true" required />
-        <x-input class="col-md-6" name="email" label="E-mail" type="email" placeholder="exemplo@exemplo" value="{{$admin->email}}" feedback="true" required />
+        <x-input class="col-md-6" name="full_name" label="Nome Completo" value="{{$admin->full_name}}" required />
+        <x-input class="col-md-6" name="email" label="E-mail" type="email" placeholder="exemplo@exemplo" value="{{$admin->email}}" required />
       </div>
       <div class="row">
-        <x-input class="col-md-6" label="CPF" placeholder="SOMENTE NÚMEROS" data-mask="000.000.000-00" value="{{$admin->cpf}}" feedback="true" required />
-        <x-input class="col-md-6" name="birthday" label="Data de Aniversário" type="date" value="{{$admin->birthday}}" feedback="true" required />
+        <x-input class="col-md-6" label="CPF" placeholder="SOMENTE NÚMEROS" data-mask="000.000.000-00" value="{{$admin->cpf}}" required />
+        <x-input class="col-md-6" name="birthday" label="Data de Aniversário" type="date" value="{{$admin->birthday}}" required />
       </div>
       <div class="row">
         <div class="col-12 mb-3">

@@ -5,19 +5,19 @@
 @section('content')
 <!-- Home Content -->
 <div class="col-md-12">
-  <div class="card">
-    <div class="card-body">
-      <div class="row">
-        <x-input class="col-md-6" label="Nome Completo" value="{{ Auth::user()->full_name}}" disabled />
-        <x-input class="col-md-6" label="Email" value="{{ Auth::user()->email}}" disabled />
-      </div>
-      <div class="row">
-        <x-input class="col-md-6" label="CPF" value="{{ Auth::user()->cpf}}" disabled />
-        <x-input class="col-md-6" type="date" label="Data de Aniversário" value="{{ Auth::user()->birthday}}" disabled />
-      </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <x-input class="col-md-6" label="Nome Completo" value="{{Auth::user()->full_name}}" disabled />
+                <x-input class="col-md-6" label="Email" value="{{Auth::user()->email}}" disabled />
+            </div>
+            <div class="row">
+                <x-input class="col-md-6" label="CPF" value="{{Auth::user()->cpf}}" disabled />
+                <x-input class="col-md-6" type="date" label="Data de Aniversário" value="{{Auth::user()->birthday}}" disabled />
+            </div>
+        </div>
+        <x-footer-show route="admin.home.index" name1="Ir para Página Inicial" />
     </div>
-    <x-footer-show route="admin.home.index" name1="Ir para Página Inicial" />
-  </div>
 </div>
 <!-- End Content -->
 @endsection

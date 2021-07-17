@@ -43,14 +43,9 @@
   <script src="{{asset('plugins/dist/js/locastyle.js')}}"></script>
 
   <script>
-    // JavaScript code to disable form submission if there are invalid fields
     (function() {
       'use strict'
-
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
       var forms = document.querySelectorAll('.needs-validation')
-
-      // Loop over them and prevent submission
       Array.prototype.slice.call(forms)
         .forEach(function(form) {
           form.addEventListener('submit', function(event) {
@@ -79,10 +74,8 @@
         toastr.success("{{ $errors->first('success') }}")
       @elseif($errors->has('warning'))
         toastr.warning("{{ $errors->first('warning') }}")
-      @elseif($errors->any())
-        @foreach($errors->all() as $error)
-          toastr.error("{{ $error }}")
-        @endforeach
+      @elseif($errors->has('danger'))
+        toastr.warning("{{ $errors->first('danger') }}")
       @endif
     });
   </script>

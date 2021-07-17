@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ChangePasswordRequest extends FormRequest
 {
@@ -11,10 +13,10 @@ class ChangePasswordRequest extends FormRequest
         return true;
     }
 
-    public function rules()
+    public function rules(Request $request)
     {
         return [
-            'password_old' => 'required|password|string|min:8',
+            'password_old' => ['password','string','min:8', Rule::requiredIf($request->input('password_old') ? true : false )],
             'password'     => 'required|confirmed|string|min:8',
         ];
     }
