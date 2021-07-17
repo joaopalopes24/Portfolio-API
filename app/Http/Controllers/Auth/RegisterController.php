@@ -43,8 +43,8 @@ class RegisterController extends Controller
         ]);
     }
 
-    protected function registered(Request $request, $user)
+    protected function registered(Request $request, $admin)
     {
-        return $user->assignRole('Visitante');
+        $admin->assignRole('Visitante');
     }
 }

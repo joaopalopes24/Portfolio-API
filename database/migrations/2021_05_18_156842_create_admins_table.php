@@ -13,8 +13,8 @@ class CreateAdminsTable extends Migration
             $table->string('full_name');
             $table->string('email')->unique();
             $table->string('password')->nullable();
-            $table->string('cpf',14)->unique();
-            $table->date('birthday');
+            $table->string('cpf',14)->nullable()->unique();
+            $table->date('birthday')->nullable();
             $table->timestamps();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

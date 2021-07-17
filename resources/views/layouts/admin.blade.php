@@ -163,14 +163,6 @@
     });
   </script>
 
-  <script>
-    (function() {
-      $('#setting_id').change(function() {
-        $('#change_year').submit();
-      });
-    })();
-  </script>
-
   @stack('scripts')
 
 </body>
