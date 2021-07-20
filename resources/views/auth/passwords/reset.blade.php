@@ -9,6 +9,7 @@
         <x-auth-input icon="fas fa-envelope" type="email" name="email" placeholder="E-mail" value="{{ $email ?? old('email') }}" feedback="true" required />
         <x-auth-input icon="fas fa-lock" type="password" name="password" placeholder="Senha" minlength="8" feedback="true" required />
         <x-auth-input icon="fas fa-lock" type="password" name="password_confirmation" placeholder="Confirmar Senha" minlength="8" feedback="true" required />
+        <x-checkbox class="custom-switch" name="view_password" label="Mostrar Senha" onclick="viewDatePassword()" />
         <x-auth-button name1="Alterar Senha" />
     </form>
 </div>

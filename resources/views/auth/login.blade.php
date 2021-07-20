@@ -7,6 +7,8 @@
         @csrf
         <x-auth-input icon="fas fa-envelope" type="email" name="email" placeholder="E-mail" value="{{old('email')}}" feedback="true" required />
         <x-auth-input icon="fas fa-lock" type="password" name="password" placeholder="Senha" minlength="8" feedback="true" required />
+        <x-checkbox class="custom-switch" name="view_password" label="Mostrar Senha" onclick="viewDatePassword()" />
+        <x-checkbox class="custom-switch" name="remember" label="Lembre de mim" />
         <x-auth-button route="password.request" name1="Entrar" name2="Esqueceu sua senha?" />
     </form>
     <p class="my-1">

@@ -12,7 +12,7 @@
         </div>
         <div class="row">
             <x-input class="col-md-6" label="CPF" value="{{$admin->cpf}}" disabled />
-            <x-input class="col-md-6" name="birthday" label="Data de Aniversário" value="{{$admin->birthday}}" disabled />
+            <x-input class="col-md-6" name="birthday" label="Data de Nascimento" value="{{$admin->birthday}}" disabled />
         </div>
         <div class="row">
             <div class="col-12 mb-3">

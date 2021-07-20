@@ -22,6 +22,7 @@
                 <div class="row">
                     <x-input class="col-md-6" type="password" name="password_confirmation" label="Confirmar Senha" minlength="8" required />
                 </div>
+                <x-checkbox class="custom-switch" name="view_password" label="Mostrar Senha" onclick="viewDatePassword()" />
             </div>
             <x-footer-edit-create route="admin.home.index" name1="Ir para Página Inicial" name2="Alterar Senha" />
         </form>

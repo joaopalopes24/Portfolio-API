@@ -40,10 +40,10 @@
 @push('scripts')
 <script>
     function ClearFields() {
-        document.getElementById("full_name").value = "";
-        document.getElementById("mother_name").value = "";
-        document.getElementById("cpf").value = "";
-        document.getElementById("cns").value = "";
+        $("#full_name").val('');
+        $("#mother_name").val('');
+        $("#cpf").val('');
+        $("#cns").val('');
     }
 </script>
 @endpush

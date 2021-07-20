@@ -65,6 +65,8 @@ class AdminController extends Controller
     {
         $values = $request->validated();
 
+        key_exists('password',$values) ? $values['password'] = NULL : false ;
+
         $admin->fill($values)->save();
         $admin->syncRoles($values['roles']);
 

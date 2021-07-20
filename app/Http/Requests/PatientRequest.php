@@ -16,7 +16,7 @@ class PatientRequest extends FormRequest
     {
         return [
             'photo'       => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
-            'not_photo'   => 'nullable',
+            'not_photo'   => ['nullable', Rule::in(['on'])],
             'full_name'   => 'required|string',
             'mother_name' => 'required|string',
             'birthday'    => 'required|date',

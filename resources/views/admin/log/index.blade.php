@@ -69,10 +69,10 @@
 @push('scripts')
 <script>
     function ClearFields() {
-        document.getElementById("subject_id").value = "";
-        document.getElementById("log_name").value = "";
-        document.getElementById("causer_id").value = "";
-        document.getElementById("description").value = "";
+        $("#subject_id").val('');
+        $("#log_name").val('');
+        $("#causer_id").val('');
+        $("#description").val('');
     }
 </script>
 @endpush

@@ -19,6 +19,7 @@ class AdminRequest extends FormRequest
             'email'     => ['required','email', Rule::unique('admins')->ignore($this->admin)],
             'cpf'       => ['required','cpf', Rule::unique('admins')->ignore($this->admin)],
             'birthday'  => 'required|date',
+            'password'  => ['nullable', Rule::in(['on'])],
             'roles'     => 'required|exists:roles,name',
         ];
     }
@@ -30,6 +31,7 @@ class AdminRequest extends FormRequest
             'email'     => 'E-mail',
             'cpf'       => 'CPF',
             'birthday'  => 'Data de Nascimento',
+            'password'  => 'Resetar Senha',
             'roles'     => 'Perfis do Usuário',
         ];
     }

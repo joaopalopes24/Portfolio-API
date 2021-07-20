@@ -3,17 +3,18 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 
-class ChangePasswordRequest extends FormRequest
+class ChangeProfileRequest extends FormRequest
 {
     public function authorize()
     {
         return true;
     }
 
-    public function rules()
+    public function rules(Request $request)
     {
         return [
             'password_old' => ['password','string','min:8', Rule::requiredIf(Auth::user()->password ? true : false )],

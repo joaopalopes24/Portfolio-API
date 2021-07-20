@@ -1,10 +1,13 @@
-@props(['id','name','value','label','parameter'])
+@props(['class','name','value','label','onclick'])
 
-<div class="col-xl-3 col-sm-6">
-    <div class="form-group">
-        <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="{{$id}}" name="{{$name}}" value="{{$value}}" {{ $parameter === '1' ? 'checked' : ''}}>
-            <label for="{{$id}}" class="custom-control-label">{{$label}}</label>
-        </div>
+@php
+$name = $name ?? Str::slug($label);
+$onclick = $onclick ?? '';
+@endphp
+
+<div class="col-12 form-group">
+    <div {{$attributes->merge(['class' => 'custom-control '.$class])}}>
+        <input type="checkbox" class="custom-control-input @error('password') is-invalid @elseif(old('password')) is-valid @enderror" id="{{$name}}" name="{{$name}}" {{$attributes->merge(['onclick' => ''.$onclick])}} >
+        <label for="{{$name}}" class="custom-control-label">{{$label}}</label>
     </div>
 </div>

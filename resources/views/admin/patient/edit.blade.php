@@ -56,12 +56,24 @@
 @push('scripts')
 <script>
     function notPhoto() {
-        var not_photo = document.getElementsByName('not_photo')
-        var photo = document.getElementById('photo')
-        if (not_photo.item(0).checked == true) {
-            photo.disabled = true
+        if ($('#not_photo').is(':checked')) {
+            $('#photo').prop('disabled', true);
+            $("#previewImg").css("display", "none");
         } else {
-            photo.disabled = false
+            $('#photo').prop('disabled', false);
+            $("#previewImg").css("display", "block");
+        }
+    }
+
+    function previewFile(input) {
+        var file = $("input[type=file]").get(0).files[0];
+
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                $("#previewImg").attr("src", reader.result);
+            }
+            reader.readAsDataURL(file);
         }
     }
 </script>

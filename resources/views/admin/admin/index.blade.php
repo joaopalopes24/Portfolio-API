@@ -14,7 +14,7 @@
                     <th>Nome Completo</th>
                     <th>E-mail</th>
                     <th>CPF</th>
-                    <th>Data de Aniversário</th>
+                    <th>Data de Nascimento</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -28,7 +28,7 @@
                     @php
                     $birthday = new DateTime($admin->birthday);
                     @endphp
-                    <td>{{$birthday->format('d/m/Y')}}</td>
+                    <td>{{$admin->birthday ? $birthday->format('d/m/Y') : ''}}</td>
                     <td>
                         <div class="btn-group">
                             <x-button-list permission="visualizar-e-alterar-permissoes-dos-administradores" route="admin.admin.permission.index" parameter1="{{$admin->id}}" />
