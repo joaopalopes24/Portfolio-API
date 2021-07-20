@@ -23,6 +23,7 @@ return [
     |--------------------------------------------------------------------------
     */
 
+    'profile'    => 'Perfil atualizado com sucesso!',
     'store'      => ':name cadastrado com sucesso!',
     'update'     => ':name atualizado com sucesso!',
     'destroy'    => ':name deletado com sucesso!',

@@ -2,11 +2,20 @@
 
 namespace App\Http\Requests;
 
+use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
 class PatientRequest extends FormRequest
 {
+    public function __construct()
+    {
+        $this->date1 = Carbon::now()->toDateString();
+        $this->date2 = Carbon::now()->subYears(130)->toDateString();
+        $this->date1_ = Carbon::now()->format('d/m/Y');
+        $this->date2_ = Carbon::now()->subYears(130)->format('d/m/Y');
+    }
+    
     public function authorize()
     {
         return true;
@@ -19,7 +28,7 @@ class PatientRequest extends FormRequest
             'not_photo'   => ['nullable', Rule::in(['on'])],
             'full_name'   => 'required|string',
             'mother_name' => 'required|string',
-            'birthday'    => 'required|date',
+            'birthday'    => 'required|date|before_or_equal:'.$this->date1.'|after_or_equal:'.$this->date2.'',
             'cpf'         => ['required','cpf', Rule::unique('patients')->ignore($this->patient)],
             'cns'         => ['required','cns', Rule::unique('patients')->ignore($this->patient)],
             'cep'         => 'required|string|size:9|regex:/^[0-9]{5}[-][0-9]{3}/',
@@ -49,6 +58,14 @@ class PatientRequest extends FormRequest
             'district'    => 'Bairro',
             'city'        => 'Cidade',
             'state_abbr'  => 'Estado',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'birthday.before_or_equal' => trans('validation.before_or_equal',['date' => $this->date1_]),
+            'birthday.after_or_equal'  => trans('validation.after_or_equal',['date' => $this->date2_]),
         ];
     }
 }

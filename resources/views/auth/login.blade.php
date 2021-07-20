@@ -9,6 +9,9 @@
         <x-auth-input icon="fas fa-lock" type="password" name="password" placeholder="Senha" minlength="8" feedback="true" required />
         <x-checkbox class="custom-switch" name="view_password" label="Mostrar Senha" onclick="viewDatePassword()" />
         <x-checkbox class="custom-switch" name="remember" label="Lembre de mim" />
+        <div class="d-flex justify-content-center mb-3">
+            {!! htmlFormSnippet() !!}
+        </div>
         <x-auth-button route="password.request" name1="Entrar" name2="Esqueceu sua senha?" />
     </form>
     <p class="my-1">
@@ -16,11 +19,14 @@
     </p>
     <div class="social-auth-links text-center">
         <hr>
-        <a target="_blank" href="{{ route('oauth','github') }}" class="btn btn-secondary">
+        <a href="{{ route('oauth','github') }}" class="btn btn-secondary">
             <i class="fab fa-github"></i>
         </a>
-        <a target="_blank" href="{{ route('oauth','google') }}" class="btn btn-danger">
+        <a href="{{ route('oauth','google') }}" class="btn btn-danger">
             <i class="fab fa-google"></i>
+        </a>
+        <a href="{{ route('oauth','facebook') }}" class="btn btn-primary">
+            <i class="fab fa-facebook-f"></i>
         </a>
     </div>
 </div>

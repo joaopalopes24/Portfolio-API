@@ -15,20 +15,21 @@
     <link rel="stylesheet" href="{{asset('plugins/dist/css/adminlte.min.css')}}">
     <!-- Toastr -->
     <link rel="stylesheet" href="{{asset('plugins/toastr/toastr.min.css')}}">
+    {!! htmlScriptTagJsApi() !!}
 
     @stack('styles')
 
 </head>
 
 <body class="hold-transition login-page">
-    <div class="login-box">
+    <div class="my-4" style="width:420px">
         {{-- <div class="login-logo mb-3">
-      <a href="{{ route('login') }}"><img src="{{asset('plugins/images/logo.png')}}" width="360"></a>
-    </div> --}}
-    <x-alert-message />
-    <div class="card">
-        @yield('content')
-    </div>
+            <a href="{{ route('login') }}"><img src="{{asset('plugins/images/logo.png')}}" width="360"></a>
+        </div> --}}
+        <x-alert-message />
+        <div class="card">
+            @yield('content')
+        </div>
     </div>
 
     <!-- REQUIRED SCRIPTS -->

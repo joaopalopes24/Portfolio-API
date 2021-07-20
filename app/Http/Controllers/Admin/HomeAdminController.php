@@ -22,22 +22,27 @@ class HomeAdminController extends Controller
 
     public function index()
     {
-        return view('admin.home.index', $this->values); 
+        return view('admin.home.index', $this->values);
     }
 
     public function profile()
     {
-        return view('admin.home.profile', $this->values); 
+        return view('admin.home.profile', $this->values);
     }
 
     public function profileDo(ChangeProfileRequest $request)
     {
-        return view('admin.home.profile', $this->values); 
+        $values = $request->validated();
+
+        $admin = Admin::find(Auth::user()->id);
+        $admin->fill($values)->save();
+
+        return redirect()->route('admin.home.index')->withErrors(['success' => trans('auth.profile')]);
     }
 
     public function changePassword()
     {
-        return view('admin.home.change-password', $this->values); 
+        return view('admin.home.change-password', $this->values);
     }
 
     public function changePasswordDo(ChangePasswordRequest $request)

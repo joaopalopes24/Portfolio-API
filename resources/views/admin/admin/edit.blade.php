@@ -10,12 +10,12 @@
         @csrf
         <div class="card-body">
             <div class="row">
-                <x-input class="col-md-6" name="full_name" label="Nome Completo" value="{{$admin->full_name}}" required />
-                <x-input class="col-md-6" name="email" label="E-mail" type="email" placeholder="exemplo@exemplo" value="{{$admin->email}}" required />
+                <x-input class="col-md-6" name="full_name" label="Nome Completo" value="{{old('full_name') ?? $admin->full_name}}" required />
+                <x-input class="col-md-6" name="email" label="E-mail" type="email" placeholder="exemplo@exemplo" value="{{old('email') ?? $admin->email}}" required />
             </div>
             <div class="row">
-                <x-input class="col-md-6" label="CPF" placeholder="SOMENTE NÚMEROS" data-mask="000.000.000-00" value="{{$admin->cpf}}" required />
-                <x-input class="col-md-6" name="birthday" label="Data de Nascimento" type="date" value="{{$admin->birthday}}" required />
+                <x-input class="col-md-6" label="CPF" placeholder="SOMENTE NÚMEROS" data-mask="000.000.000-00" value="{{old('cpf') ?? $admin->cpf}}" required />
+                <x-input class="col-md-6" name="birthday" label="Data de Nascimento" type="date" value="{{old('birthday') ?? $admin->birthday}}" required />
             </div>
             <div class="row">
                 <x-checkbox class="custom-switch" name="password" label="Resetar Senha" />

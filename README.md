@@ -7,6 +7,9 @@ Este sistema foi criado com o intuito de mostrar meus conhecimentos técnicos so
 - [Laravel UI](https://github.com/laravel/ui).
 - [Faker PHP](https://github.com/FakerPHP/Faker).
 - [Validator Docs](https://github.com/geekcom/validator-docs).
+- [Socialite](https://github.com/laravel/socialite).
+- [ReCaptcha](https://github.com/biscolab/laravel-recaptcha).
+- [Sanctum](https://github.com/laravel/sanctum).
 
 Para o front-end, estamos baseando a maior parte do projeto no modelo AdminLTE 3, que pode ser encontrado em [Template](https://adminlte.io/themes/v3/index.html).
 
@@ -26,12 +29,12 @@ Para o front-end, estamos baseando a maior parte do projeto no modelo AdminLTE 3
 ### Como instalar
 - Clone o projeto
     ```bash
-        git clone https://github.com/joaopalopes24/portfolio-api.git
+        git clone https://github.com/joaopalopes24/Portfolio-API.git
     ```
 
 - Mude para a pasta do repositório
     ```bash
-        cd portfolio-api
+        cd Portfolio-API
     ```
 
 - Instale as dependências usando o `composer`

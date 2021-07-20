@@ -40,6 +40,7 @@ Route::middleware('auth')->name('admin.')->group(function () {
     Route::name('home.')->group(function () {
         Route::get('/', [HomeAdminController::class, 'index'])->name('index');
         Route::get('profile', [HomeAdminController::class, 'profile'])->name('profile');
+        Route::post('profile', [HomeAdminController::class, 'profileDo'])->name('profile_do');
         Route::get('change-password', [HomeAdminController::class, 'changePassword'])->name('change_password');
         Route::post('change-password', [HomeAdminController::class, 'changePasswordDo'])->name('change_password_do');
     });

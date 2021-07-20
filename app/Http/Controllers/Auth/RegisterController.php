@@ -29,6 +29,7 @@ class RegisterController extends Controller
             'birthday'  => 'required|date',
             'email'     => 'required|string|email|max:255|unique:admins',
             'password'  => 'required|string|min:8|confirmed',
+            'g-recaptcha-response' => 'required|recaptcha',
         ]);
     }
 

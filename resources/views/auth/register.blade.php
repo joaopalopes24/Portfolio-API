@@ -12,6 +12,9 @@
         <x-auth-input icon="fas fa-lock" type="password" name="password" placeholder="Senha" minlength="8" required />
         <x-auth-input icon="fas fa-lock" type="password" name="password_confirmation" placeholder="Confirmar Senha" minlength="8" required />
         <x-checkbox class="custom-switch" name="view_password" label="Mostrar Senha" onclick="viewDatePassword()" />
+        <div class="d-flex justify-content-center mb-3">
+            {!! htmlFormSnippet() !!}
+        </div>
         <x-auth-button route="login" name1="Criar conta" name2="Tela inicial" />
     </form>
 </div>

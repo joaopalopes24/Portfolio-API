@@ -27,24 +27,24 @@
     <div class="card card-secondary card-outline">
         <div class="card-body">
             <div class="row">
-                <x-input class="col-md-5" name="full_name" label="Nome do Paciente" value="{{$patient->full_name}}" required />
-                <x-input class="col-md-4" name="mother_name" label="Nome da Mãe" value="{{$patient->mother_name}}" required />
-                <x-input class="col-md-3" type="date" name="birthday" label="Data de Nascimento" value="{{$patient->birthday}}" required />
+                <x-input class="col-md-5" name="full_name" label="Nome do Paciente" value="{{old('full_name') ?? $patient->full_name}}" required />
+                <x-input class="col-md-4" name="mother_name" label="Nome da Mãe" value="{{old('mother_name') ?? $patient->mother_name}}" required />
+                <x-input class="col-md-3" type="date" name="birthday" label="Data de Nascimento" value="{{old('birthday') ?? $patient->birthday}}" required />
             </div>
             <div class="row">
-                <x-input class="col-md-4" label="CPF" placeholder="SOMENTE NÚMEROS" data-mask="000.000.000-00" value="{{$patient->cpf}}" required />
-                <x-input class="col-md-4" label="CNS" placeholder="SOMENTE NÚMEROS" data-mask="000 0000 0000 0000" value="{{$patient->cns}}" required />
-                <x-input class="col-md-4" label="CEP" placeholder="SOMENTE NÚMEROS" data-mask="00000-000" value="{{$patient->cep}}" onblur="pesquisacep(this.value);" required />
+                <x-input class="col-md-4" label="CPF" placeholder="SOMENTE NÚMEROS" data-mask="000.000.000-00" value="{{old('cpf') ?? $patient->cpf}}" required />
+                <x-input class="col-md-4" label="CNS" placeholder="SOMENTE NÚMEROS" data-mask="000 0000 0000 0000" value="{{old('cns') ?? $patient->cns}}" required />
+                <x-input class="col-md-4" label="CEP" placeholder="SOMENTE NÚMEROS" data-mask="00000-000" value="{{old('cep') ?? $patient->cep}}" onblur="pesquisacep(this.value);" required />
             </div>
             <div class="row">
-                <x-input class="col-md-5" name="adress" label="Rua / Avenida" value="{{$patient->adress}}" required />
-                <x-input class="col-md-3" type="number" name="number" label="Número" value="{{$patient->number}}" required />
-                <x-input class="col-md-4" name="complement" label="Complemento" value="{{$patient->complement}}" />
+                <x-input class="col-md-5" name="adress" label="Rua / Avenida" value="{{old('adress') ?? $patient->adress}}" required />
+                <x-input class="col-md-3" type="number" name="number" label="Número" value="{{old('number') ?? $patient->number}}" required />
+                <x-input class="col-md-4" name="complement" label="Complemento" value="{{old('complement') ?? $patient->complement}}" />
             </div>
             <div class="row">
-                <x-input class="col-md-5" name="district" label="Bairro" value="{{$patient->district}}" required />
-                <x-input class="col-md-5" name="city" label="Cidade" value="{{$patient->city}}" required />
-                <x-select-state class="col-md-2" name="state_abbr" label="Estado" value="{{$patient->state_abbr}}" required />
+                <x-input class="col-md-5" name="district" label="Bairro" value="{{old('district') ?? $patient->district}}" required />
+                <x-input class="col-md-5" name="city" label="Cidade" value="{{old('city') ?? $patient->city}}" required />
+                <x-select-state class="col-md-2" name="state_abbr" label="Estado" value="{{old('state_abbr') ?? $patient->state_abbr}}" required />
             </div>
         </div>
         <x-footer-edit-create route="admin.patient.index" />
