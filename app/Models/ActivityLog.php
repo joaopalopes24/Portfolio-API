@@ -20,7 +20,8 @@ class ActivityLog extends Activity
             })
             ->when($description, function ($query, $description) {
                 return $query->where('description', 'like', '%'.$description.'%');
-            });
+            })
+            ->orderBy('id');
         
         return $result;
     }

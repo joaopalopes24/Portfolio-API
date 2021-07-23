@@ -6,14 +6,8 @@
 <!-- Home Content -->
 <form class="needs-validation" action="{{route('admin.patient.store')}}" method="post" enctype="multipart/form-data" novalidate>
     @csrf
-    <div class="callout callout-info">
-        <div class="row">
-            <img class="profile-user-img img-fluid img-circle" src="{{asset("plugins/images/userX.png")}}" alt="Foto de Perfil do Usuário">
-            <x-input-file class="col-md-5" name="photo" label="Foto de Perfil (preferencialmente fotos quadradas)" />
-            <div class="col-md-1 offset-md-4"></div>
-        </div>
-    </div>
     <div class="card card-secondary card-outline">
+        <x-modal-photo :parameter="NULL" />
         <div class="card-body">
             <div class="row">
                 <x-input class="col-md-5" name="full_name" label="Nome do Paciente" value="{{old('full_name')}}" required />
@@ -43,6 +37,29 @@
 @endsection
 
 @push('scripts')
+<script>
+    function notPhoto() {
+        if ($('#not_photo').is(':checked')) {
+            $('#photo').prop('disabled', true);
+            $("#previewImg").css("display", "none");
+        } else {
+            $('#photo').prop('disabled', false);
+            $("#previewImg").css("display", "block");
+        }
+    }
+
+    function previewFile(input) {
+        var file = $("input[type=file]").get(0).files[0];
+
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                $("#previewImg").attr("src", reader.result);
+            }
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
 {{-- Esse Script com integração do ViaCEP foi pegado na própria documentação do ViaCEP com pequenas alterações --}}
 <script src="{{asset('plugins/dist/js/viacep.js')}}"></script>
 @endpush

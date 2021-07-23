@@ -24,7 +24,7 @@ Para o front-end, estamos baseando a maior parte do projeto no modelo AdminLTE 3
 - PHP >= 7.3
 - Laravel = 8
 - Composer v1.10.3
-- Mysql v7.4.11
+- PostgreSQL v9.6
 
 ### Como instalar
 - Clone o projeto

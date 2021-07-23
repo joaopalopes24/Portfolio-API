@@ -22,7 +22,7 @@ class RoleController extends Controller
 
     public function index()
     {
-        $this->values['roles'] = Role::paginate(10);
+        $this->values['roles'] = Role::orderBy('id')->paginate(10);
 
         return view('admin.role.index', $this->values);
     }

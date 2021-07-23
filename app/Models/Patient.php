@@ -40,7 +40,8 @@ class Patient extends Model
             })
             ->when($cns, function ($query, $cns) {
                 return $query->where('cns', 'like', '%'.$cns.'%');
-            });
+            })
+            ->orderBy('id');
         
         return $result;
     }

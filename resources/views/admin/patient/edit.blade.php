@@ -7,24 +7,8 @@
 <form class="needs-validation" action="{{route('admin.patient.update',$patient->id)}}" method="post" enctype="multipart/form-data" novalidate>
     @method('put')
     @csrf
-    <div class="callout callout-info">
-        <div class="row">
-            @php
-            $patient->photo ? $url = "storage/$patient->photo" : $url = "plugins/images/userX.png";
-            @endphp
-            <img class="profile-user-img img-fluid img-circle" src="{{asset($url)}}" alt="Foto de Perfil do Usuário">
-            <x-input-file class="col-md-5" name="photo" label="Foto de Perfil (preferencialmente fotos quadradas)" />
-            <div class="col-md-3 offset-md-2" style="margin-top: 40px;">
-                <div class="form-group">
-                    <div class="custom-control custom-checkbox">
-                        <input class="custom-control-input" type="checkbox" id="not_photo" name="not_photo" onclick="notPhoto()">
-                        <label for="not_photo" class="custom-control-label">Sem Foto</label>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="card card-secondary card-outline">
+        <x-modal-photo :parameter="$patient" />
         <div class="card-body">
             <div class="row">
                 <x-input class="col-md-5" name="full_name" label="Nome do Paciente" value="{{old('full_name') ?? $patient->full_name}}" required />

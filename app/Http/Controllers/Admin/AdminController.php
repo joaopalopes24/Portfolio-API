@@ -23,7 +23,7 @@ class AdminController extends Controller
 
     public function index()
     {
-        $this->values['admins'] = Admin::paginate(15);
+        $this->values['admins'] = Admin::orderBy('id')->paginate(15);
 
         return view('admin.admin.index', $this->values);
     }

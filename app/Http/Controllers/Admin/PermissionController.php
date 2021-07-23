@@ -23,7 +23,7 @@ class PermissionController extends Controller
 
     public function index()
     {
-        $this->values['permissions'] = Permission::paginate(20);
+        $this->values['permissions'] = Permission::orderBy('id')->paginate(20);
 
         return view('admin.permission.index', $this->values);
     }
